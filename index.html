@@ -71,30 +71,54 @@
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent via-surface/40 to-surface"></div>
             </div>
             <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
-                <p id="saludo-invitado" class="text-sm font-bold tracking-[0.3em] uppercase text-on-surface-variant mb-4">
-                    Estás cordialmente invitado a la boda de
-                </p>
-                <h1 class="font-headline text-7xl md:text-9xl lg:text-[10rem] text-on-surface mb-12 leading-none">
-                    Evelyn <span class="text-primary/80 block md:inline">&</span> Julian
-                </h1>
 
-                <div class="flex flex-wrap justify-center gap-4 md:gap-8 bg-surface/80 backdrop-blur-md px-6 py-6 rounded-2xl border border-surface-variant inline-flex">
-                    <div class="countdown-item">
-                        <span id="contador-dias" class="text-3xl md:text-4xl font-bold text-primary">00</span>
-                        <span class="text-[10px] uppercase tracking-widest font-bold mt-1">Días</span>
+                <!-- Texto explicativo superior -->
+                <div class="flex items-center justify-center gap-3 md:gap-6 mb-8 opacity-0 fade-in">
+                    <div class="h-[1px] w-12 md:w-32 bg-gradient-to-r from-transparent via-primary/50 to-primary/80 rounded-full"></div>
+                    <p id="saludo-invitado" class="text-[10px] md:text-xs font-bold tracking-[0.4em] uppercase text-on-surface-variant m-0 text-center">
+                        Estás cordialmente invitado a la boda de
+                    </p>
+                    <div class="h-[1px] w-12 md:w-32 bg-gradient-to-l from-transparent via-primary/50 to-primary/80 rounded-full"></div>
+                </div>
+
+                <!-- Título Principal -->
+                <div class="opacity-0 fade-in mb-8" style="animation-delay: 200ms;">
+                    <h1 class="font-headline text-7xl md:text-9xl lg:text-[10rem] leading-tight pb-6 sunbeam-title shadow-3d-text">
+                        Evelyn
+                        <span class="jewel-ampersand">&</span>
+                        Julian
+                    </h1>
+                </div>
+
+                <!-- Contenedor del Contador de Tiempo -->
+                <div class="mt-12 opacity-0 fade-in flex flex-col items-center" style="animation-delay: 400ms;">
+
+                    <p class="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-6 opacity-80">
+                        Cuenta Regresiva
+                    </p>
+
+                    <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+                        <div class="countdown-item glass-card flex flex-col items-center justify-center">
+                            <span id="contador-dias" class="text-3xl md:text-4xl font-bold text-primary">00</span>
+                            <span class="text-[10px] uppercase tracking-[0.2em] font-bold mt-2 opacity-70">Días</span>
+                        </div>
+
+                        <div class="countdown-item glass-card flex flex-col items-center justify-center">
+                            <span id="contador-horas" class="text-3xl md:text-4xl font-bold text-primary">00</span>
+                            <span class="text-[10px] uppercase tracking-[0.2em] font-bold mt-2 opacity-70">Hrs</span>
+                        </div>
+
+                        <div class="countdown-item glass-card flex flex-col items-center justify-center">
+                            <span id="contador-minutos" class="text-3xl md:text-4xl font-bold text-primary">00</span>
+                            <span class="text-[10px] uppercase tracking-[0.2em] font-bold mt-2 opacity-70">Min</span>
+                        </div>
+
+                        <div class="countdown-item glass-card flex flex-col items-center justify-center">
+                            <span id="contador-segundos" class="text-3xl md:text-4xl font-bold text-secondary">00</span>
+                            <span class="text-[10px] uppercase tracking-[0.2em] font-bold mt-2 text-secondary/80">Seg</span>
+                        </div>
                     </div>
-                    <div class="countdown-item">
-                        <span id="contador-horas" class="text-3xl md:text-4xl font-bold text-primary">00</span>
-                        <span class="text-[10px] uppercase tracking-widest font-bold mt-1">Horas</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="contador-minutos" class="text-3xl md:text-4xl font-bold text-primary">00</span>
-                        <span class="text-[10px] uppercase tracking-widest font-bold mt-1">Min</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="contador-segundos" class="text-3xl md:text-4xl font-bold text-secondary">00</span>
-                        <span class="text-[10px] uppercase tracking-widest font-bold mt-1 text-secondary">Seg</span>
-                    </div>
+
                 </div>
             </div>
         </section>
@@ -136,7 +160,7 @@
             </div>
         </section>
 
-        <section class="py-24 px-6 bg-background/40" id="galeria">
+        <section class="py-24 px-6 bg-surface-container-lowest/60" id="galeria">
             <div class="max-w-5xl mx-auto text-center">
                 <h2 class="font-headline text-6xl mb-12">Nuestra Historia</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
