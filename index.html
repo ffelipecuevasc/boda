@@ -3,14 +3,13 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>E&J - Invitación Digital</title>
+    <title>E&J - Invitación Digital PRO</title>
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
     <script>
@@ -39,156 +38,169 @@
     </script>
     <link rel="stylesheet" href="./static/css/index.css">
 </head>
-<body class="bg-background text-on-background font-body antialiased">
+<body class="bg-background text-on-background font-body antialiased relative">
 
-<nav class="hidden md:flex fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-surface-variant">
-    <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto w-full">
-        <a class="font-headline text-3xl text-on-surface" href="#">E&L</a>
-        <div class="flex items-center gap-8 font-semibold text-xs uppercase tracking-widest">
-            <a class="text-on-surface/60 hover:text-primary transition-colors" href="#eventos">Eventos</a>
-            <a class="text-on-surface/60 hover:text-primary transition-colors" href="#galeria">Galería</a>
-            <a class="text-on-surface/60 hover:text-primary transition-colors" href="#regalos">Regalos</a>
-        </div>
-        <a class="bg-primary text-on-primary px-6 py-2 rounded-md hover:bg-secondary transition-colors text-xs uppercase tracking-widest font-bold" href="#rsvp">Confirmar</a>
-    </div>
-</nav>
+<div id="linterna-bg" class="linterna-mask fixed inset-0 z-0 pointer-events-none">
+</div>
 
-<main>
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-surface-container-low">
-        <div class="absolute inset-0 z-0">
-            <img alt="Bosque" class="w-full h-full object-cover opacity-60 mix-blend-multiply" src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2070&auto=format&fit=crop"/>
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-surface/40 to-surface"></div>
-        </div>
-        <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
-            <p id="saludo-invitado" class="text-sm font-bold tracking-[0.3em] uppercase text-on-surface-variant mb-4">
-                Estás cordialmente invitado a la boda de
-            </p>
-            <h1 class="font-headline text-7xl md:text-9xl lg:text-[10rem] text-on-surface mb-12 leading-none">
-                Evelyn <span class="text-primary/80 block md:inline">&</span> Julian
-            </h1>
+<div class="relative z-10">
+    <nav class="hidden md:flex fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-surface-variant">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto w-full">
+            <a class="flex items-center gap-2 group" href="#">
+                <svg class="text-primary animate-pulse group-hover:text-secondary transition-colors" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                    <path fill="currentColor" fill-opacity="0" d="M12 8c0 0 0 0 0.76 -1c0.88 -1.16 2.18 -2 3.74 -2c2.49 0 4.5 2.01 4.5 4.5c0 0.93 -0.28 1.79 -0.76 2.5c-0.81 1.21 -8.24 9 -8.24 9c0 0 -7.43 -7.79 -8.24 -9c-0.48 -0.71 -0.76 -1.57 -0.76 -2.5c0 -2.49 2.01 -4.5 4.5 -4.5c1.56 0 2.87 0.84 3.74 2c0.76 1 0.76 1 0.76 1Z"><animate fill="freeze" attributeName="fill-opacity" begin="0.7s" dur="0.5s" values="0;1"/></path>
+                    <path fill="none" stroke="currentColor" stroke-dasharray="32" stroke-dashoffset="32" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c0 0 0 0 -0.76 -1c-0.88 -1.16 -2.18 -2 -3.74 -2c-2.49 0 -4.5 2.01 -4.5 4.5c0 0.93 0.28 1.79 0.76 2.5c0.81 1.21 8.24 9 8.24 9M12 8c0 0 0 0 0.76 -1c0.88 -1.16 2.18 -2 3.74 -2c2.49 0 4.5 2.01 4.5 4.5c0 0.93 -0.28 1.79 -0.76 2.5c-0.81 1.21 -8.24 9 -8.24 9"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.7s" values="32;0"/></path>
+                </svg>
+                <span class="font-body text-2xl font-bold text-on-surface tracking-tight group-hover:text-primary transition-colors">E&J</span>
+            </a>
 
-            <div class="flex flex-wrap justify-center gap-4 md:gap-8 bg-surface/80 backdrop-blur-md px-6 py-6 rounded-2xl border border-surface-variant inline-flex">
-                <div class="countdown-item">
-                    <span id="contador-dias" class="text-3xl md:text-4xl font-bold text-primary">00</span>
-                    <span class="text-[10px] uppercase tracking-widest font-bold mt-1">Días</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="contador-horas" class="text-3xl md:text-4xl font-bold text-primary">00</span>
-                    <span class="text-[10px] uppercase tracking-widest font-bold mt-1">Horas</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="contador-minutos" class="text-3xl md:text-4xl font-bold text-primary">00</span>
-                    <span class="text-[10px] uppercase tracking-widest font-bold mt-1">Min</span>
-                </div>
-                <div class="countdown-item">
-                    <span id="contador-segundos" class="text-3xl md:text-4xl font-bold text-secondary">00</span>
-                    <span class="text-[10px] uppercase tracking-widest font-bold mt-1 text-secondary">Seg</span>
-                </div>
+            <div class="flex items-center gap-8 font-semibold text-xs uppercase tracking-widest">
+                <a class="text-on-surface/60 hover:text-primary transition-colors" href="#eventos">Eventos</a>
+                <a class="text-on-surface/60 hover:text-primary transition-colors" href="#galeria">Galería</a>
+                <a class="text-on-surface/60 hover:text-primary transition-colors" href="#regalos">Regalos</a>
             </div>
-        </div>
-    </section>
 
-    <section class="py-24 px-6 bg-surface-container-low" id="eventos">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="font-headline text-6xl text-center mb-16">La Celebración</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-3xl border border-surface-variant shadow-sm">
-                    <h3 class="font-headline text-4xl mb-4 text-primary">La Ceremonia</h3>
-                    <div class="space-y-4 mb-8 text-sm">
-                        <p class="flex items-center gap-2 font-bold"><span class="material-symbols-outlined">schedule</span> 16:00 HRS</p>
-                        <p class="flex items-start gap-2">
-                            <span class="material-symbols-outlined text-primary">location_on</span>
-                            <span>Iglesia San Francisco, Santiago Centro</span>
-                        </p>
-                        <p class="flex items-center gap-2"><span class="material-symbols-outlined">checkroom</span> <strong>Dress Code:</strong> Formal</p>
+            <a class="bg-primary text-surface px-6 py-2 rounded-md hover:bg-secondary transition-colors text-xs uppercase tracking-widest font-bold" href="#rsvp">Confirmar</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="relative min-h-screen flex items-center justify-center overflow-hidden" id="principal">
+            <div class="absolute inset-0 z-0 bg-background">
+                <img alt="Bosque" class="w-full h-full object-cover opacity-60 mix-blend-multiply" src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2070&auto=format&fit=crop"/>
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-surface/40 to-surface"></div>
+            </div>
+            <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+                <p id="saludo-invitado" class="text-sm font-bold tracking-[0.3em] uppercase text-on-surface-variant mb-4">
+                    Estás cordialmente invitado a la boda de
+                </p>
+                <h1 class="font-headline text-7xl md:text-9xl lg:text-[10rem] text-on-surface mb-12 leading-none">
+                    Evelyn <span class="text-primary/80 block md:inline">&</span> Julian
+                </h1>
+
+                <div class="flex flex-wrap justify-center gap-4 md:gap-8 bg-surface/80 backdrop-blur-md px-6 py-6 rounded-2xl border border-surface-variant inline-flex">
+                    <div class="countdown-item">
+                        <span id="contador-dias" class="text-3xl md:text-4xl font-bold text-primary">00</span>
+                        <span class="text-[10px] uppercase tracking-widest font-bold mt-1">Días</span>
                     </div>
-                    <div class="flex gap-4">
-                        <a href="https://maps.google.com" target="_blank" class="flex-1 text-center bg-surface-container py-3 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-surface-variant transition">Google Maps</a>
-                        <a href="#" class="flex-1 text-center border border-primary text-primary py-3 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition">Agendar</a>
+                    <div class="countdown-item">
+                        <span id="contador-horas" class="text-3xl md:text-4xl font-bold text-primary">00</span>
+                        <span class="text-[10px] uppercase tracking-widest font-bold mt-1">Horas</span>
                     </div>
-                </div>
-                <div class="bg-white p-8 rounded-3xl border border-surface-variant shadow-sm">
-                    <h3 class="font-headline text-4xl mb-4 text-primary">La Fiesta</h3>
-                    <div class="space-y-4 mb-8 text-sm">
-                        <p class="flex items-center gap-2 font-bold"><span class="material-symbols-outlined">celebration</span> 18:30 HRS</p>
-                        <p class="flex items-start gap-2">
-                            <span class="material-symbols-outlined text-primary">location_on</span>
-                            <span>Centro de Eventos Lircay, Colina</span>
-                        </p>
+                    <div class="countdown-item">
+                        <span id="contador-minutos" class="text-3xl md:text-4xl font-bold text-primary">00</span>
+                        <span class="text-[10px] uppercase tracking-widest font-bold mt-1">Min</span>
                     </div>
-                    <div class="flex gap-4">
-                        <a href="https://waze.com" target="_blank" class="flex-1 text-center bg-surface-container py-3 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-surface-variant transition">Waze</a>
-                        <a href="#" class="flex-1 text-center border border-primary text-primary py-3 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition">Agendar</a>
+                    <div class="countdown-item">
+                        <span id="contador-segundos" class="text-3xl md:text-4xl font-bold text-secondary">00</span>
+                        <span class="text-[10px] uppercase tracking-widest font-bold mt-1 text-secondary">Seg</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="py-24 px-6 bg-white" id="galeria">
-        <div class="max-w-5xl mx-auto text-center">
-            <h2 class="font-headline text-6xl mb-12">Nuestra Historia</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="aspect-square overflow-hidden rounded-2xl shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=600" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                </div>
-                <div class="aspect-square overflow-hidden rounded-2xl shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                </div>
-                <div class="aspect-square overflow-hidden rounded-2xl shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        <section class="py-24 px-6 bg-surface-container-lowest/60" id="evento">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="font-headline text-6xl text-center mb-16">La Celebración</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-3xl border border-surface-variant shadow-sm relative z-20">
+                        <h3 class="font-headline text-4xl mb-4 text-primary">La Ceremonia</h3>
+                        <div class="space-y-4 mb-8 text-sm">
+                            <p class="flex items-center gap-2 font-bold"><span class="material-symbols-outlined">schedule</span> 16:00 HRS</p>
+                            <p class="flex items-start gap-2">
+                                <span class="material-symbols-outlined text-primary">location_on</span>
+                                <span>Iglesia San Francisco, Santiago Centro</span>
+                            </p>
+                            <p class="flex items-center gap-2"><span class="material-symbols-outlined">checkroom</span> <strong>Dress Code:</strong> Formal</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://maps.google.com" target="_blank" class="flex-1 text-center bg-surface-container py-3 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-surface-variant transition">Google Maps</a>
+                            <a href="#" class="flex-1 text-center border border-primary text-primary py-3 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition">Agendar</a>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl border border-surface-variant shadow-sm relative z-20">
+                        <h3 class="font-headline text-4xl mb-4 text-primary">La Fiesta</h3>
+                        <div class="space-y-4 mb-8 text-sm">
+                            <p class="flex items-center gap-2 font-bold"><span class="material-symbols-outlined">celebration</span> 18:30 HRS</p>
+                            <p class="flex items-start gap-2">
+                                <span class="material-symbols-outlined text-primary">location_on</span>
+                                <span>Centro de Eventos Lircay, Colina</span>
+                            </p>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://waze.com" target="_blank" class="flex-1 text-center bg-surface-container py-3 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-surface-variant transition">Waze</a>
+                            <a href="#" class="flex-1 text-center border border-primary text-primary py-3 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition">Agendar</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="py-24 px-6 bg-surface-container-low" id="regalos">
-        <div class="max-w-2xl mx-auto text-center bg-white p-12 rounded-[3rem] border border-surface-variant shadow-sm">
-            <span class="material-symbols-outlined text-primary text-5xl mb-4">featured_seasonal_and_gifts</span>
-            <h2 class="font-headline text-5xl mb-6">Regalos</h2>
-            <p class="text-sm mb-8 italic">Tu presencia es nuestro mejor regalo, pero si deseas ayudarnos con nuestra luna de miel:</p>
-            <div class="text-left space-y-2 text-sm border-t border-surface-variant pt-6">
-                <p><strong>Banco:</strong> Banco Estado</p>
-                <p><strong>Tipo Cuenta:</strong> Cuenta Corriente</p>
-                <p><strong>Número:</strong> 123456789</p>
-                <p><strong>RUT:</strong> 12.345.678-9</p>
-                <p><strong>Email:</strong> boda@eandj.cl</p>
+        <section class="py-24 px-6 bg-background/40" id="galeria">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="font-headline text-6xl mb-12">Nuestra Historia</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="aspect-square overflow-hidden rounded-2xl shadow-lg relative z-20">
+                        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=600" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-2xl shadow-lg relative z-20">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-2xl shadow-lg relative z-20">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="py-24 px-6 bg-primary" id="rsvp">
-        <div class="max-w-3xl mx-auto bg-white text-on-surface p-8 md:p-12 rounded-3xl shadow-xl">
-            <h2 class="font-headline text-6xl mb-4 text-center">Confirmar</h2>
-            <p class="text-center text-xs uppercase tracking-[0.2em] mb-12 font-bold opacity-60">RSVP</p>
-
-            <form id="formulario-rsvp" class="space-y-6">
-                <div class="space-y-1">
-                    <label class="text-[10px] font-bold uppercase tracking-widest ml-1">Nombre Completo</label>
-                    <input required type="text" id="nombre" class="w-full p-4 border border-surface-variant rounded-xl focus:ring-primary">
+        <section class="py-24 px-6 bg-surface-container-lowest/60" id="regalos">
+            <div class="max-w-2xl mx-auto text-center bg-white p-12 rounded-[3rem] border border-surface-variant shadow-sm relative z-20">
+                <span class="material-symbols-outlined text-primary text-5xl mb-4">featured_seasonal_and_gifts</span>
+                <h2 class="font-headline text-5xl mb-6">Regalos</h2>
+                <p class="text-sm mb-8 italic">Tu presencia es nuestro mejor regalo, pero si deseas ayudarnos con nuestra luna de miel:</p>
+                <div class="text-left space-y-2 text-sm border-t border-surface-variant pt-6">
+                    <p><strong>Banco:</strong> Banco Estado</p>
+                    <p><strong>Tipo Cuenta:</strong> Cuenta Corriente</p>
+                    <p><strong>Número:</strong> 123456789</p>
+                    <p><strong>RUT:</strong> 12.345.678-9</p>
+                    <p><strong>Email:</strong> boda@eandj.cl</p>
                 </div>
-                <div class="space-y-1">
-                    <label class="text-[10px] font-bold uppercase tracking-widest ml-1">¿Asistirás?</label>
-                    <select required id="asistencia" class="w-full p-4 border border-surface-variant rounded-xl focus:ring-primary">
-                        <option value="">Selecciona...</option>
-                        <option value="si">¡Sí, ahí estaré!</option>
-                        <option value="no">No podré ir</option>
-                    </select>
-                </div>
-                <div class="space-y-1">
-                    <label class="text-[10px] font-bold uppercase tracking-widest ml-1">Canción Sugerida 🎵</label>
-                    <input type="text" id="cancion" class="w-full p-4 border border-surface-variant rounded-xl focus:ring-primary" placeholder="Artista - Canción">
-                </div>
-                <button type="submit" class="w-full bg-primary text-white py-5 rounded-xl uppercase tracking-[0.3em] font-bold hover:bg-secondary transition-all shadow-lg active:scale-95">
-                    Enviar Confirmación
-                </button>
-            </form>
-            <div id="mensaje-exito" class="hidden mt-6 p-6 bg-green-50 text-green-800 rounded-2xl text-center font-bold">
-                ¡Gracias! Tu confirmación ha sido registrada.
             </div>
-        </div>
-    </section>
-</main>
+        </section>
+
+        <section class="py-24 px-6 bg-primary relative z-20" id="rsvp">
+            <div class="max-w-3xl mx-auto bg-white text-on-surface p-8 md:p-12 rounded-3xl shadow-xl">
+                <h2 class="font-headline text-6xl mb-4 text-center">Confirmar</h2>
+                <p class="text-center text-xs uppercase tracking-[0.2em] mb-12 font-bold opacity-60">RSVP</p>
+
+                <form id="formulario-rsvp" class="space-y-6">
+                    <div class="space-y-1">
+                        <label class="text-[10px] font-bold uppercase tracking-widest ml-1">Nombre Completo</label>
+                        <input required type="text" id="nombre" class="w-full p-4 border border-surface-variant rounded-xl focus:ring-primary">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-[10px] font-bold uppercase tracking-widest ml-1">¿Asistirás?</label>
+                        <select required id="asistencia" class="w-full p-4 border border-surface-variant rounded-xl focus:ring-primary">
+                            <option value="">Selecciona...</option>
+                            <option value="si">¡Sí, ahí estaré!</option>
+                            <option value="no">No podré ir</option>
+                        </select>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-[10px] font-bold uppercase tracking-widest ml-1">Canción Sugerida 🎵</label>
+                        <input type="text" id="cancion" class="w-full p-4 border border-surface-variant rounded-xl focus:ring-primary" placeholder="Artista - Canción">
+                    </div>
+                    <button type="submit" class="w-full bg-primary text-white py-5 rounded-xl uppercase tracking-[0.3em] font-bold hover:bg-secondary transition-all shadow-lg active:scale-95">
+                        Enviar Confirmación
+                    </button>
+                </form>
+                <div id="mensaje-exito" class="hidden mt-6 p-6 bg-green-50 text-green-800 rounded-2xl text-center font-bold">
+                    ¡Gracias! Tu confirmación ha sido registrada.
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
 
 <script src="./static/js/index.js" defer></script>
 </body>

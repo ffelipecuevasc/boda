@@ -4,11 +4,6 @@
     @apply flex flex-col items-center min-w-[70px];
 }
 
-/* Efecto de recorte de hoja (si se requiere para elementos decorativos) */
-.clip-leaf {
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-}
-
 /* Transiciones suaves para los cambios de estado */
 .fade-in {
     animation: fadeIn 0.8s ease-in forwards;
@@ -19,9 +14,27 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Ajustes para inputs enfocados */
 input:focus, select:focus {
     outline: none;
     border-color: #4a6452;
     box-shadow: 0 0 0 2px rgba(74, 100, 82, 0.2);
+}
+
+/* ========================================
+   EFECTO LINTERNA RADIAL (HOVER STATE)
+======================================== */
+.linterna-mask {
+    --x: 50vw;
+    --y: 50vh;
+
+    /* 1. Vinculamos el SVG externo como fondo */
+    /* Ajusta la ruta dependiendo de dónde esté tu CSS respecto al SVG */
+    background-image: url('../img/patron.svg');
+    background-size: cover;
+
+    /* 2. Reducimos el radio de 350px a 180px para un efecto más puntual */
+    -webkit-mask-image: radial-gradient(circle 180px at var(--x) var(--y), black 0%, transparent 100%);
+    mask-image: radial-gradient(circle 180px at var(--x) var(--y), black 0%, transparent 100%);
+
+    will-change: mask-image, -webkit-mask-image;
 }

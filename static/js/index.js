@@ -1,6 +1,5 @@
 /**
  * Lógica de la Invitación Digital
- * Desarrollado por: [Tu Nombre/Empresa]
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // --- 2. CUENTA REGRESIVA (Objetivo: 31 Dic 2026) ---
+    // --- 2. CUENTA REGRESIVA ---
     const manejarCuentaRegresiva = () => {
         const fechaFin = new Date('December 31, 2026 23:59:59').getTime();
 
@@ -50,14 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-
-            // Simulación de envío a Google Sheets
-            console.log("Enviando datos...", {
-                nombre: document.getElementById('nombre').value,
-                asistencia: document.getElementById('asistencia').value,
-                cancion: document.getElementById('cancion').value
-            });
-
             form.classList.add('opacity-50', 'pointer-events-none');
             setTimeout(() => {
                 form.style.display = 'none';
@@ -67,8 +58,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    // --- 4. MOTOR DEL EFECTO LINTERNA (Soporte Desktop + Mobile) ---
+    const manejarLinterna = () => {
+        const linterna = document.getElementById('linterna-bg');
+        if (!linterna) return;
+
+        // Función unificada para actualizar coordenadas
+        const actualizarPosicion = (clientX, clientY) => {
+            requestAnimationFrame(() => {
+                linterna.style.setProperty('--x', `${clientX}px`);
+                linterna.style.setProperty('--y', `${clientY}px`);
+            });
+        };
+
+        // Escucha para Mouse (Desktop)
+        document.addEventListener('mousemove', (e) => {
+            actualizarPosicion(e.clientX, e.clientY);
+        });
+
+        // Escucha para Toque (Mobile/Tablets)
+        document.addEventListener('touchmove', (e) => {
+            // Prevenimos el scroll si queremos que el dedo solo mueva la linterna
+            // Si quieres que el usuario pueda hacer scroll mientras mueve la linterna,
+            // borra la siguiente línea (e.preventDefault()):
+
+            const toque = e.touches[0];
+            actualizarPosicion(toque.clientX, toque.clientY);
+        }, { passive: true }); // passive: true mejora el rendimiento del scroll en móviles
+    };
     // Inicializar funciones
     manejarBienvenida();
     manejarCuentaRegresiva();
     manejarFormulario();
+    manejarLinterna();
 });
