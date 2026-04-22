@@ -112,10 +112,10 @@ input:focus, select:focus {
 
 /* 3. El Ampersand como Joya (Focal Point) */
 .jewel-ampersand {
-    display: inline-block;
-    font-size: 0.75em;          /* Escala ligeramente menor para no competir con los nombres */
-    font-style: italic;         /* Cursiva pronunciada para elegancia */
+    position: relative;         /* Usamos posición en lugar de transform */
+    top: -0.1em;                /* Lo elevamos sutilmente sin romper el background-clip */
+    font-size: 0.75em;
+    font-style: italic;
     margin: 0 0.15em;
-    opacity: 0.9;
-    transform: translateY(-8px); /* Elevación sutil para romper la línea base del texto */
+    /* Eliminamos display: inline-block; y opacity: 0.9; para evitar crear nuevos contextos de apilamiento */
 }
