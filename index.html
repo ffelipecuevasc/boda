@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Evelyn & Julian - Nuestra Boda</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#4a6452",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e3e3de",
+                        "surface-container": "#efeee9",
+                        "secondary": "#526442",
+                        "surface-container-high": "#e9e8e3",
+                        "on-primary": "#ffffff",
+                        "background": "#faf9f4",
+                        "surface-container-low": "#f5f4ef",
+                        "on-surface-variant": "#434841",
+                        "on-background": "#1b1c19",
+                        "on-surface": "#1b1c19",
+                        "tertiary": "#715a48",
+                        "surface": "#faf9f4",
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body antialiased selection:bg-primary/20 selection:text-primary">
+
+<nav class="hidden md:flex fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-surface-container shadow-sm transition-all">
+    <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto w-full">
+        <a class="font-headline italic text-2xl text-on-surface" href="#">E&L</a>
+        <div class="flex items-center gap-8 font-headline text-lg tracking-tight">
+            <a class="text-on-surface/60 hover:text-primary transition-colors" href="#eventos">Eventos</a>
+            <a class="text-on-surface/60 hover:text-primary transition-colors" href="#galeria">Galería</a>
+            <a class="text-on-surface/60 hover:text-primary transition-colors" href="#regalos">Regalos</a>
+        </div>
+        <a class="bg-primary text-on-primary px-6 py-2 rounded-md hover:bg-secondary transition-colors font-label tracking-widest uppercase text-xs" href="#rsvp">Confirmar</a>
+    </div>
+</nav>
+
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-[32px] bg-surface/95 backdrop-blur-lg border-t border-surface-variant shadow-[0_-8px_32px_rgba(0,0,0,0.05)]">
+    <div class="flex justify-around items-center px-4 py-3">
+        <a class="flex flex-col items-center text-primary p-2" href="#">
+            <span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">home</span>
+            <span class="font-label text-[10px] uppercase tracking-widest">Inicio</span>
+        </a>
+        <a class="flex flex-col items-center text-on-surface/40 hover:text-primary p-2" href="#eventos">
+            <span class="material-symbols-outlined mb-1">calendar_today</span>
+            <span class="font-label text-[10px] uppercase tracking-widest">Agenda</span>
+        </a>
+        <a class="flex flex-col items-center text-on-surface/40 hover:text-primary p-2" href="#rsvp">
+            <span class="material-symbols-outlined mb-1">mail</span>
+            <span class="font-label text-[10px] uppercase tracking-widest">RSVP</span>
+        </a>
+    </div>
+</nav>
+
+<main>
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-surface-container-low">
+        <div class="absolute inset-0 z-0">
+            <img alt="Fondo bosque" class="w-full h-full object-cover opacity-60 mix-blend-multiply" src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2070&auto=format&fit=crop"/>
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-surface/40 to-surface"></div>
+        </div>
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center">
+            <p id="saludo-invitado" class="font-label text-sm md:text-base tracking-[0.3em] uppercase text-on-surface-variant mb-6">
+                Estás cordialmente invitado a la boda de
+            </p>
+            <h1 class="font-headline text-6xl md:text-8xl lg:text-9xl text-on-surface tracking-[-0.02em] leading-none mb-8">
+                Evelyn <span class="italic text-primary/80 block md:inline">&</span> Julian
+            </h1>
+            <p class="font-body text-lg md:text-xl text-on-surface-variant mb-12">25 de Octubre, 2025 • Blackwood Estate</p>
+
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8 bg-surface/80 backdrop-blur-md px-6 py-6 rounded-2xl border border-surface-variant">
+                <div class="flex flex-col items-center min-w-[70px]">
+                    <span id="contador-dias" class="font-headline text-3xl md:text-4xl text-primary">00</span>
+                    <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Días</span>
+                </div>
+                <div class="flex flex-col items-center min-w-[70px]">
+                    <span id="contador-horas" class="font-headline text-3xl md:text-4xl text-primary">00</span>
+                    <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Horas</span>
+                </div>
+                <div class="flex flex-col items-center min-w-[70px]">
+                    <span id="contador-minutos" class="font-headline text-3xl md:text-4xl text-primary">00</span>
+                    <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Min</span>
+                </div>
+                <div class="flex flex-col items-center min-w-[70px]">
+                    <span id="contador-segundos" class="font-headline text-3xl md:text-4xl text-secondary">00</span>
+                    <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Seg</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-surface-container-low relative" id="eventos">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-headline text-4xl md:text-6xl text-on-surface">La Celebración</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="relative overflow-hidden rounded-3xl bg-surface-container-lowest p-8 shadow-sm border border-surface-variant">
+                    <h3 class="font-headline text-3xl text-on-surface mb-2">La Ceremonia</h3>
+                    <p class="font-label text-sm tracking-widest uppercase text-tertiary mb-6">4:00 PM</p>
+                    <div class="font-body text-on-surface-variant space-y-4 mb-8">
+                        <p class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary">location_on</span>
+                            <span>El Conservatorio de Cristal<br/>Blackwood Estate</span>
+                        </p>
+                        <p class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary">checkroom</span>
+                            <span><strong>Dress Code:</strong> Elegante / Formal (Evitar color blanco)</span>
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-4 border-t border-surface-variant pt-6">
+                        <a href="https://maps.google.com/?q=Blackwood+Estate" target="_blank" class="flex items-center gap-2 text-sm bg-surface-container px-4 py-2 rounded-lg hover:bg-surface-variant transition">
+                            <span class="material-symbols-outlined text-sm">map</span> Ver en Google Maps
+                        </a>
+                        <a href="#" class="flex items-center gap-2 text-primary font-label text-xs tracking-widest uppercase hover:underline">
+                            <span class="material-symbols-outlined text-sm">calendar_add_on</span> Agendar
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden rounded-3xl bg-surface-container-lowest p-8 shadow-sm border border-surface-variant">
+                    <h3 class="font-headline text-3xl text-on-surface mb-2">La Fiesta</h3>
+                    <p class="font-label text-sm tracking-widest uppercase text-tertiary mb-6">6:00 PM - Hasta el amanecer</p>
+                    <div class="font-body text-on-surface-variant space-y-4 mb-8">
+                        <p class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary">location_on</span>
+                            <span>Gran Carpa de los Jardines<br/>Blackwood Estate</span>
+                        </p>
+                        <p class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary">restaurant</span>
+                            <span>Cena, Cócteles y Baile (Menú adaptado a restricciones)</span>
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-4 border-t border-surface-variant pt-6">
+                        <a href="https://waze.com/ul?ll=-33.4372,-70.6506&navigate=yes" target="_blank" class="flex items-center gap-2 text-sm bg-surface-container px-4 py-2 rounded-lg hover:bg-surface-variant transition">
+                            <span class="material-symbols-outlined text-sm">directions_car</span> Abrir en Waze
+                        </a>
+                        <a href="#" class="flex items-center gap-2 text-primary font-label text-xs tracking-widest uppercase hover:underline">
+                            <span class="material-symbols-outlined text-sm">calendar_add_on</span> Agendar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-surface" id="galeria">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-headline text-4xl text-on-surface mb-4">Nuestros Momentos</h2>
+                <p class="font-body text-on-surface-variant">Un pequeño vistazo a nuestra historia.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Foto 1" class="w-full h-80 object-cover rounded-xl shadow-md"/>
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" alt="Foto 2" class="w-full h-80 object-cover rounded-xl shadow-md md:-translate-y-4"/>
+                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=800&q=80" alt="Foto 3" class="w-full h-80 object-cover rounded-xl shadow-md"/>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-surface-container-low" id="regalos">
+        <div class="max-w-2xl mx-auto text-center">
+            <span class="material-symbols-outlined text-primary text-5xl mb-6">featured_seasonal_and_gifts</span>
+            <h2 class="font-headline text-4xl text-on-surface mb-6">Mesa de Regalos</h2>
+            <p class="font-body text-on-surface-variant mb-8">El mejor regalo es tu presencia. Sin embargo, si deseas tener un detalle con nosotros para nuestra luna de miel, puedes hacerlo aquí:</p>
+
+            <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant text-left inline-block w-full">
+                <p class="font-label text-sm text-tertiary uppercase tracking-widest mb-4">Datos Bancarios</p>
+                <div class="font-body text-on-surface space-y-2">
+                    <p><strong>Titular:</strong> Evelyn y Julian</p>
+                    <p><strong>Banco:</strong> Banco de Chile</p>
+                    <p><strong>Cuenta Corriente:</strong> 123-45678-09</p>
+                    <p><strong>RUT:</strong> 12.345.678-9</p>
+                    <p><strong>Email:</strong> novios@boda.cl</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-primary text-on-primary relative" id="rsvp">
+        <div class="max-w-3xl mx-auto bg-surface-container-lowest text-on-surface p-8 md:p-12 rounded-3xl shadow-xl">
+            <h2 class="font-headline text-4xl mb-2 text-center">Confirmar Asistencia</h2>
+            <p class="text-center text-on-surface-variant mb-8">Por favor, confírmanos antes del 1 de Octubre.</p>
+
+            <form id="formulario-rsvp" class="space-y-6">
+                <div>
+                    <label class="block font-label text-sm font-semibold mb-2" for="nombre">Nombre Completo</label>
+                    <input required type="text" id="nombre" class="w-full p-3 border border-surface-variant rounded-lg focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Ej. Juan Pérez">
+                </div>
+
+                <div>
+                    <label class="block font-label text-sm font-semibold mb-2">¿Podrás acompañarnos?</label>
+                    <select required id="asistencia" class="w-full p-3 border border-surface-variant rounded-lg focus:ring-2 focus:ring-primary focus:outline-none">
+                        <option value="">Selecciona una opción...</option>
+                        <option value="si">¡Sí, ahí estaré!</option>
+                        <option value="no">Lamentablemente no podré ir</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block font-label text-sm font-semibold mb-2" for="cancion">Sugiérenos una canción para la fiesta 🎵</label>
+                    <input type="text" id="cancion" class="w-full p-3 border border-surface-variant rounded-lg focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Ej. Dancing Queen - ABBA">
+                </div>
+
+                <div>
+                    <label class="block font-label text-sm font-semibold mb-2" for="alergias">¿Tienes alguna restricción alimentaria?</label>
+                    <textarea id="alergias" rows="2" class="w-full p-3 border border-surface-variant rounded-lg focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Celiaco, vegano, alergia al maní..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-primary text-white font-label tracking-widest uppercase py-4 rounded-lg hover:bg-secondary transition-colors font-semibold">
+                    Enviar Confirmación
+                </button>
+            </form>
+
+            <div id="mensaje-exito" class="hidden mt-6 p-4 bg-green-100 text-green-800 rounded-lg text-center font-body">
+                ¡Gracias! Tus datos han sido enviados a nuestra planilla de Excel.
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-surface-container py-12 flex flex-col items-center text-center pb-32 md:pb-12">
+        <div class="font-headline text-2xl text-primary mb-4">E&L</div>
+        <p class="font-label text-xs tracking-widest uppercase text-primary">Los esperamos con cariño — 2025</p>
+    </footer>
+</main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // 1. CONFIGURACIÓN DE LA FECHA (31 de Diciembre de 2026)
+        const fechaObjetivo = new Date('December 31, 2026 23:59:59').getTime();
+
+        // 2. LÓGICA DEL TEMPORIZADOR
+        const actualizarReloj = setInterval(() => {
+            const ahora = new Date().getTime();
+            const distancia = fechaObjetivo - ahora;
+
+            if (distancia > 0) {
+                // Cálculos matemáticos para cada unidad de tiempo
+                const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+                const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+                const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+                // Actualización del DOM con padStart para mantener siempre dos dígitos
+                document.getElementById('contador-dias').textContent = dias.toString().padStart(2, '0');
+                document.getElementById('contador-horas').textContent = horas.toString().padStart(2, '0');
+                document.getElementById('contador-minutos').textContent = minutos.toString().padStart(2, '0');
+                document.getElementById('contador-segundos').textContent = segundos.toString().padStart(2, '0');
+            } else {
+                // Detener el intervalo cuando se alcance la fecha
+                clearInterval(actualizarReloj);
+                document.querySelectorAll('[id^="contador-"]').forEach(el => el.textContent = "00");
+            }
+        }, 1000);
+    });
+</script>
+</body>
+</html>
