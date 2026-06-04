@@ -4,23 +4,28 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Boda A&A</title>
-    <link rel="icon" type="image/svg+xml" href="./static/img/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./static/img/favicon.svg"/>
 
     <meta name="title" content="Boda Ann & Asiel - ¡Nos Casamos!">
-    <meta name="description" content="Estás cordialmente invitado a celebrar nuestra boda este 11 de Septiembre de 2026. Revisa los detalles, ubicación y confirma tu asistencia aquí.">
+    <meta name="description"
+          content="Estás cordialmente invitado a celebrar nuestra boda este 11 de Septiembre de 2026. Revisa los detalles, ubicación y confirma tu asistencia aquí.">
     <meta name="author" content="Felipe Cuevas">
-    <meta name="theme-color" content="#fee4e5"> <meta property="og:type" content="website">
+    <meta name="theme-color" content="#fee4e5">
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://ffelipecuevasc.github.io/invitacionboda1/">
     <meta property="og:title" content="¡Nos Casamos! - Boda Ann & Asiel">
-    <meta property="og:description" content="Estás cordialmente invitado a celebrar nuestra boda este 11 de Septiembre de 2026. Revisa los detalles y confirma tu asistencia.">
+    <meta property="og:description"
+          content="Estás cordialmente invitado a celebrar nuestra boda este 11 de Septiembre de 2026. Revisa los detalles y confirma tu asistencia.">
     <meta property="og:image" content="https://ffelipecuevasc.github.io/invitacionboda1/static/img/rrss.png">
     <meta property="og:image:alt" content="Invitación digital a la boda de Ann y Asiel">
     <meta property="og:site_name" content="Boda Ann & Asiel">
     <meta property="og:locale" content="es_LA">
 
-    <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:url" content="https://ffelipecuevasc.github.io/invitacionboda1/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://ffelipecuevasc.github.io/invitacionboda1/">
     <meta name="twitter:title" content="¡Nos Casamos! - Boda Ann & Asiel">
-    <meta name="twitter:description" content="Estás cordialmente invitado a celebrar nuestra boda este 11 de Septiembre de 2026. Revisa los detalles y confirma tu asistencia.">
+    <meta name="twitter:description"
+          content="Estás cordialmente invitado a celebrar nuestra boda este 11 de Septiembre de 2026. Revisa los detalles y confirma tu asistencia.">
     <meta name="twitter:image" content="https://ffelipecuevasc.github.io/invitacionboda1/static/img/rrss.png">
     <meta name="twitter:image:alt" content="Invitación digital a la boda de Ann y Asiel">
 
@@ -28,7 +33,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
           rel="stylesheet"/>
@@ -50,14 +55,14 @@
                         "tertiary": "#b08981",
                     },
                     fontFamily: {
-                        "headline": ['"Beau Rivage"', 'cursive'],
+                        "headline": ['"Gwendolyn"', 'cursive'],
                         "body": ['"Montserrat"', 'sans-serif'],
                     },
                     /* FASE 1: Fotogramas clave para la Respiración Orgánica */
                     keyframes: {
                         ambientPulse: {
-                            '0%, 100%': { opacity: '0.15', transform: 'scale(1)' },
-                            '50%': { opacity: '0.35', transform: 'scale(1.05)' },
+                            '0%, 100%': {opacity: '0.15', transform: 'scale(1)'},
+                            '50%': {opacity: '0.35', transform: 'scale(1.05)'},
                         }
                     },
                     /* FASE 1: Animación de 15s fluida e infinita */
@@ -111,11 +116,12 @@
         <!-- Sección Principal -->
         <section class="relative min-h-screen flex items-center justify-center overflow-hidden" id="principal">
             <div class="absolute inset-0 z-0 bg-background">
-                <img alt="Bosque" class="w-full h-full object-cover opacity-40 mix-blend-multiply"
-                     src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2070&auto=format&fit=crop"/>
+                <img alt="Ann y Asiel en la playa" class="w-full h-full object-cover opacity-40 mix-blend-multiply"
+                     src="./static/img/portada.png"/>
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent via-surface/60 to-surface"></div>
 
-                <canvas id="hojas-canvas" class="w-full h-full block absolute inset-0 z-10 pointer-events-none"></canvas>
+                <canvas id="hojas-canvas"
+                        class="w-full h-full block absolute inset-0 z-10 pointer-events-none"></canvas>
             </div>
             <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
 
@@ -179,9 +185,10 @@
                     <!-- La Boda -->
                     <div class="pausar-linterna bg-surface-container-lowest/40 backdrop-blur-xl border-t border-l border-white/60 shadow-xl rounded-[1.5rem] p-8 md:p-12 relative z-20 overflow-hidden flex flex-col justify-center text-center">
 
-                        <svg class="absolute -bottom-16 -right-16 w-64 h-64 text-tertiary opacity-10 z-0 transform rotate-12 pointer-events-none" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C8 2 4 5 4 9C4 11.2 5.2 13 6.8 14.2C5.5 15.5 3 17 3 17C6 17 8.5 15.5 10 14.5C10.6 14.8 11.3 15 12 15C16 15 20 12 20 8C20 4 16 2 12 2ZM12 13C8.5 13 6 10.5 6 9C6 6.5 8.5 4 12 4C15.5 4 18 6.5 18 8C18 10.5 15.5 13 12 13Z" />
-                            <path d="M14 20C14 20 12 22 12 22C12 22 10 20 10 18C10 16 12 15 12 15C12 15 14 16 14 18C14 20 14 20 14 20Z" />
+                        <svg class="absolute -bottom-16 -right-16 w-64 h-64 text-tertiary opacity-10 z-0 transform rotate-12 pointer-events-none"
+                             viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C8 2 4 5 4 9C4 11.2 5.2 13 6.8 14.2C5.5 15.5 3 17 3 17C6 17 8.5 15.5 10 14.5C10.6 14.8 11.3 15 12 15C16 15 20 12 20 8C20 4 16 2 12 2ZM12 13C8.5 13 6 10.5 6 9C6 6.5 8.5 4 12 4C15.5 4 18 6.5 18 8C18 10.5 15.5 13 12 13Z"/>
+                            <path d="M14 20C14 20 12 22 12 22C12 22 10 20 10 18C10 16 12 15 12 15C12 15 14 16 14 18C14 20 14 20 14 20Z"/>
                         </svg>
 
                         <div class="relative z-10">
@@ -205,7 +212,8 @@
                                         <span class="material-symbols-outlined text-primary">location_on</span>
                                         Salón del Reino de los Testigos de Jehová, Villarrica
                                     </p>
-                                    <a href="https://maps.app.goo.gl/khoe52TjrNbXPXbJ6" target="_blank" rel="noopener noreferrer"
+                                    <a href="https://maps.app.goo.gl/khoe52TjrNbXPXbJ6" target="_blank"
+                                       rel="noopener noreferrer"
                                        class="mt-3 inline-block bg-primary text-surface px-8 py-2 rounded-md hover:bg-secondary transition-colors text-[10px] font-bold uppercase tracking-widest">
                                         ¿Cómo llegar?
                                     </a>
@@ -225,9 +233,10 @@
                     <!-- La Fiesta -->
                     <div class="pausar-linterna bg-surface-container-lowest/40 backdrop-blur-xl border-t border-l border-white/60 shadow-xl rounded-[1.5rem] p-8 md:p-12 relative z-20 overflow-hidden flex flex-col justify-center text-center">
 
-                        <svg class="absolute -top-12 -left-12 w-72 h-72 text-tertiary opacity-[0.08] z-0 transform -rotate-45 pointer-events-none" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C8 2 4 5 4 9C4 11.2 5.2 13 6.8 14.2C5.5 15.5 3 17 3 17C6 17 8.5 15.5 10 14.5C10.6 14.8 11.3 15 12 15C16 15 20 12 20 8C20 4 16 2 12 2ZM12 13C8.5 13 6 10.5 6 9C6 6.5 8.5 4 12 4C15.5 4 18 6.5 18 8C18 10.5 15.5 13 12 13Z" />
-                            <path d="M14 20C14 20 12 22 12 22C12 22 10 20 10 18C10 16 12 15 12 15C12 15 14 16 14 18C14 20 14 20 14 20Z" />
+                        <svg class="absolute -top-12 -left-12 w-72 h-72 text-tertiary opacity-[0.08] z-0 transform -rotate-45 pointer-events-none"
+                             viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C8 2 4 5 4 9C4 11.2 5.2 13 6.8 14.2C5.5 15.5 3 17 3 17C6 17 8.5 15.5 10 14.5C10.6 14.8 11.3 15 12 15C16 15 20 12 20 8C20 4 16 2 12 2ZM12 13C8.5 13 6 10.5 6 9C6 6.5 8.5 4 12 4C15.5 4 18 6.5 18 8C18 10.5 15.5 13 12 13Z"/>
+                            <path d="M14 20C14 20 12 22 12 22C12 22 10 20 10 18C10 16 12 15 12 15C12 15 14 16 14 18C14 20 14 20 14 20Z"/>
                         </svg>
 
                         <div class="relative z-10">
@@ -263,7 +272,8 @@
                                         <span class="material-symbols-outlined text-primary">celebration</span>
                                         Detalles
                                     </p>
-                                    <p class="mt-1 text-xs text-on-surface-variant opacity-80">Cena + Bar abierto + Tótem de Fotos</p>
+                                    <p class="mt-1 text-xs text-on-surface-variant opacity-80">Cena + Bar abierto +
+                                        Tótem de Fotos</p>
                                 </div>
                             </div>
                         </div>
@@ -279,17 +289,21 @@
                 <h2 class="font-headline text-6xl md:text-7xl lg:text-8xl text-center mb-12 leading-tight pb-4 sunbeam-title shadow-3d-text">
                     Galería de Fotografías
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="aspect-square overflow-hidden rounded-2xl shadow-lg relative z-20">
-                        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=600"
+                        <img src="./static/img/asielyann_1.jpeg" alt="Manos entrelazadas Ann y Asiel"
                              class="w-full h-full object-cover hover:scale-105 transition duration-500">
                     </div>
                     <div class="aspect-square overflow-hidden rounded-2xl shadow-lg relative z-20">
-                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600"
+                        <img src="./static/img/asielyann_2.jpeg" alt="Ann y Asiel abrazados"
                              class="w-full h-full object-cover hover:scale-105 transition duration-500">
                     </div>
                     <div class="aspect-square overflow-hidden rounded-2xl shadow-lg relative z-20">
-                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600"
+                        <img src="./static/img/asielyann_3.jpeg" alt="Ann y Asiel en la orilla del lago"
+                             class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-2xl shadow-lg relative z-20">
+                        <img src="./static/img/asielyann_4.jpeg" alt="Asiel levantando a Ann"
                              class="w-full h-full object-cover hover:scale-105 transition duration-500">
                     </div>
                 </div>
@@ -300,14 +314,16 @@
         <section class="py-24 px-6 bg-surface-container-lowest/60" id="regalos">
             <div class="pausar-linterna max-w-2xl mx-auto text-center bg-surface-container-lowest/40 backdrop-blur-xl border-t border-l border-white/60 shadow-xl rounded-[1.5rem] p-12 relative z-20 overflow-hidden">
 
-                <svg class="absolute -bottom-20 -left-10 w-80 h-80 text-tertiary opacity-10 z-0 transform rotate-45 pointer-events-none" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C8 2 4 5 4 9C4 11.2 5.2 13 6.8 14.2C5.5 15.5 3 17 3 17C6 17 8.5 15.5 10 14.5C10.6 14.8 11.3 15 12 15C16 15 20 12 20 8C20 4 16 2 12 2ZM12 13C8.5 13 6 10.5 6 9C6 6.5 8.5 4 12 4C15.5 4 18 6.5 18 8C18 10.5 15.5 13 12 13Z" />
-                    <path d="M14 20C14 20 12 22 12 22C12 22 10 20 10 18C10 16 12 15 12 15C12 15 14 16 14 18C14 20 14 20 14 20Z" />
+                <svg class="absolute -bottom-20 -left-10 w-80 h-80 text-tertiary opacity-10 z-0 transform rotate-45 pointer-events-none"
+                     viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8 2 4 5 4 9C4 11.2 5.2 13 6.8 14.2C5.5 15.5 3 17 3 17C6 17 8.5 15.5 10 14.5C10.6 14.8 11.3 15 12 15C16 15 20 12 20 8C20 4 16 2 12 2ZM12 13C8.5 13 6 10.5 6 9C6 6.5 8.5 4 12 4C15.5 4 18 6.5 18 8C18 10.5 15.5 13 12 13Z"/>
+                    <path d="M14 20C14 20 12 22 12 22C12 22 10 20 10 18C10 16 12 15 12 15C12 15 14 16 14 18C14 20 14 20 14 20Z"/>
                 </svg>
 
-                <svg class="absolute -top-16 -right-16 w-64 h-64 text-tertiary opacity-[0.06] z-0 transform -rotate-135 pointer-events-none" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C8 2 4 5 4 9C4 11.2 5.2 13 6.8 14.2C5.5 15.5 3 17 3 17C6 17 8.5 15.5 10 14.5C10.6 14.8 11.3 15 12 15C16 15 20 12 20 8C20 4 16 2 12 2ZM12 13C8.5 13 6 10.5 6 9C6 6.5 8.5 4 12 4C15.5 4 18 6.5 18 8C18 10.5 15.5 13 12 13Z" />
-                    <path d="M14 20C14 20 12 22 12 22C12 22 10 20 10 18C10 16 12 15 12 15C12 15 14 16 14 18C14 20 14 20 14 20Z" />
+                <svg class="absolute -top-16 -right-16 w-64 h-64 text-tertiary opacity-[0.06] z-0 transform -rotate-135 pointer-events-none"
+                     viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8 2 4 5 4 9C4 11.2 5.2 13 6.8 14.2C5.5 15.5 3 17 3 17C6 17 8.5 15.5 10 14.5C10.6 14.8 11.3 15 12 15C16 15 20 12 20 8C20 4 16 2 12 2ZM12 13C8.5 13 6 10.5 6 9C6 6.5 8.5 4 12 4C15.5 4 18 6.5 18 8C18 10.5 15.5 13 12 13Z"/>
+                    <path d="M14 20C14 20 12 22 12 22C12 22 10 20 10 18C10 16 12 15 12 15C12 15 14 16 14 18C14 20 14 20 14 20Z"/>
                 </svg>
 
                 <div class="relative z-10">
@@ -317,7 +333,8 @@
                     </h2>
 
                     <p class="text-sm mb-8 italic font-body text-on-surface-variant">
-                        <strong class="text-on-surface">Tu presencia es nuestro mejor regalo,</strong> pero si deseas ayudarnos con
+                        <strong class="text-on-surface">Tu presencia es nuestro mejor regalo,</strong> pero si deseas
+                        ayudarnos con
                         nuestra luna de miel acá te dejamos la información:
                     </p>
 
@@ -349,7 +366,8 @@
                 <h2 class="font-headline text-6xl md:text-7xl lg:text-8xl text-center mb-4 leading-tight pb-4 sunbeam-title shadow-3d-text">
                     Confirmar
                 </h2>
-                <p class="text-center text-xs uppercase tracking-[0.2em] mb-12 font-bold opacity-60">¿Asistirás a nuestra boda?</p>
+                <p class="text-center text-xs uppercase tracking-[0.2em] mb-12 font-bold opacity-60">¿Asistirás a
+                    nuestra boda?</p>
 
                 <form id="formulario-rsvp" class="space-y-6">
                     <div class="space-y-1">
@@ -369,26 +387,32 @@
                     </div>
 
                     <div class="space-y-3">
-                        <label class="text-[10px] font-bold uppercase tracking-widest ml-1">Restricciones Alimenticias</label>
+                        <label class="text-[10px] font-bold uppercase tracking-widest ml-1">Restricciones
+                            Alimenticias</label>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pl-1">
                             <label class="flex items-center gap-3 cursor-pointer group">
-                                <input type="checkbox" name="restriccion" value="ninguna" class="w-5 h-5 rounded border-surface-variant text-primary focus:ring-primary transition-all">
+                                <input type="checkbox" name="restriccion" value="ninguna"
+                                       class="w-5 h-5 rounded border-surface-variant text-primary focus:ring-primary transition-all">
                                 <span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Ninguna</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer group">
-                                <input type="checkbox" name="restriccion" value="vegetariano" class="w-5 h-5 rounded border-surface-variant text-primary focus:ring-primary transition-all">
+                                <input type="checkbox" name="restriccion" value="vegetariano"
+                                       class="w-5 h-5 rounded border-surface-variant text-primary focus:ring-primary transition-all">
                                 <span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Vegetariano</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer group">
-                                <input type="checkbox" name="restriccion" value="celiaco" class="w-5 h-5 rounded border-surface-variant text-primary focus:ring-primary transition-all">
+                                <input type="checkbox" name="restriccion" value="celiaco"
+                                       class="w-5 h-5 rounded border-surface-variant text-primary focus:ring-primary transition-all">
                                 <span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Celíaco</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer group">
-                                <input type="checkbox" name="restriccion" value="vegano" class="w-5 h-5 rounded border-surface-variant text-primary focus:ring-primary transition-all">
+                                <input type="checkbox" name="restriccion" value="vegano"
+                                       class="w-5 h-5 rounded border-surface-variant text-primary focus:ring-primary transition-all">
                                 <span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Vegano</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer group">
-                                <input type="checkbox" name="restriccion" value="sin-lactosa" class="w-5 h-5 rounded border-surface-variant text-primary focus:ring-primary transition-all">
+                                <input type="checkbox" name="restriccion" value="sin-lactosa"
+                                       class="w-5 h-5 rounded border-surface-variant text-primary focus:ring-primary transition-all">
                                 <span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Sin Lactosa</span>
                             </label>
                         </div>
@@ -419,7 +443,8 @@
     <footer class="bg-primary py-8 px-6 text-center relative z-20 border-t border-white/10">
         <div class="max-w-6xl mx-auto flex flex-col items-center justify-center gap-2">
             <p class="text-[10px] md:text-xs text-white/80 uppercase tracking-[0.2em] font-bold font-body">
-                Desarrollado por <a href="https://www.linkedin.com/in/ffelipecuevasc/" class="text-white hover:text-white/60 transition-colors">Felipe Cuevas</a>
+                Desarrollado por <a href="https://www.linkedin.com/in/ffelipecuevasc/"
+                                    class="text-white hover:text-white/60 transition-colors">Felipe Cuevas</a>
             </p>
             <p class="text-[9px] md:text-[10px] text-white/50 uppercase tracking-widest font-body">
                 &copy; 2026 Todos los derechos reservados
