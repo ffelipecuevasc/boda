@@ -31,7 +31,7 @@ export const inicializarModal = (nombre, rol) => {
 
         // Construimos un mensaje emotivo personalizado que destaca su rol especial
         const articulo = rol === "DAMA DE HONOR" ? "nuestra" : "nuestro";
-        modalMensajeEspecial.textContent = `¡Eres una pieza fundamental en nuestro gran día como ${articulo} ${rol.toLowerCase()}!`;
+        modalMensajeEspecial.textContent = `¡Eres una pieza fundamental en nuestro gran día como ${articulo} ${rol}!`;
 
         // Implementación del Concepto 1: Removemos la clase hidden para revelar el elemento pre-construido
         modalMensajeEspecial.classList.remove('hidden');
