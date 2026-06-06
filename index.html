@@ -177,9 +177,11 @@
         <!-- Contenedor padre de 3 secciones que contiene fondo floral en los extremos -->
         <div class="relative w-full overflow-hidden bg-surface-container-lowest/60">
 
-            <div class="absolute top-0 left-0 w-[95px] sm:w-[115px] md:w-[140px] lg:w-[165px] xl:w-[190px] h-full floral-border z-0 pointer-events-none mix-blend-multiply opacity-90" style="mask-image: linear-gradient(to bottom, black 85%, transparent 100%, black 0%); -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%, black 0%);"></div>
+            <div class="absolute top-0 left-0 w-[95px] sm:w-[115px] md:w-[140px] lg:w-[165px] xl:w-[190px] h-full floral-border z-0 pointer-events-none mix-blend-multiply opacity-90"
+                 style="mask-image: linear-gradient(to bottom, black 85%, transparent 100%, black 0%); -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%, black 0%);"></div>
 
-            <div class="absolute top-0 right-0 w-[95px] sm:w-[115px] md:w-[140px] lg:w-[165px] xl:w-[190px] h-full floral-border z-0 pointer-events-none mix-blend-multiply opacity-90 -scale-x-100" style="mask-image: linear-gradient(to bottom, black 85%, transparent 100%, black 0%); -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%, black 0%);"></div>
+            <div class="absolute top-0 right-0 w-[95px] sm:w-[115px] md:w-[140px] lg:w-[165px] xl:w-[190px] h-full floral-border z-0 pointer-events-none mix-blend-multiply opacity-90 -scale-x-100"
+                 style="mask-image: linear-gradient(to bottom, black 85%, transparent 100%, black 0%); -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%, black 0%);"></div>
 
             <div class="relative z-10">
 
@@ -711,6 +713,26 @@
     </footer>
 </div>
 
-<script src="./static/js/index.js" defer></script>
+<dialog
+        id="welcome-modal"
+        aria-labelledby="modal-nombre"
+        aria-describedby="modal-desc"
+        class="bg-surface-container-lowest p-8 md:p-12 rounded-[2rem] shadow-2xl backdrop:backdrop-blur-md backdrop:bg-surface/60 text-center max-w-md w-[90%] fade-in m-auto open:flex flex-col items-center justify-center gap-4"
+>
+    <span id="modal-rol" class="text-[10px] font-bold uppercase tracking-[0.3em] text-tertiary"></span>
+
+    <h2 id="modal-nombre" class="font-headline text-5xl md:text-6xl text-primary leading-tight my-2"></h2>
+
+    <p id="modal-desc" class="font-body text-sm text-on-surface-variant mb-4">
+        Nos llena de alegría contar con su presencia en este momento tan especial.
+    </p>
+
+    <button id="btn-entrar"
+            class="bg-primary text-white px-8 py-4 rounded-xl uppercase tracking-[0.2em] font-bold text-[10px] hover:bg-secondary transition-all shadow-lg active:scale-95">
+        Entrar a la invitación
+    </button>
+</dialog>
+
+<script type="module" src="./static/js/index.js" defer></script>
 </body>
 </html>

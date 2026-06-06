@@ -1,17 +1,30 @@
 /**
- * Lógica de la Invitación Digital
+ * /static/js/index.js
+ * Controlador Principal
  */
+
+import { listaInvitados } from './data/invitados.js'; // Ajusta la ruta según tu estructura real
+import { inicializarModal } from './ui/modal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. PERSONALIZACIÓN DE BIENVENIDA ---
-    const manejarBienvenida = () => {
+    // --- FASE 4: VALIDACIÓN SILENCIOSA Y MANEJO DE URL ---
+    const manejarAccesoInvitado = () => {
         const urlParams = new URLSearchParams(window.location.search);
-        const invitado = urlParams.get('nombre');
-        const saludoEl = document.getElementById('saludo-invitado');
+        const vipHash = urlParams.get('vip');
 
-        if (invitado && saludoEl) {
-            saludoEl.textContent = `¡Bienvenidos, ${invitado.nombre}! Estás cordialmente invitado a la boda de`;
+        // Si la URL no tiene parámetro o el hash no existe, la página carga normal (falla silenciosa)
+        if (vipHash && listaInvitados[vipHash]) {
+            const invitado = listaInvitados[vipHash];
+
+            // Inyectar datos en la modal y abrirla
+            inicializarModal(invitado.nombre, invitado.rol);
+
+            // Actualizamos también el saludo del DOM de fondo (opcional, para mantener tu estructura original)
+            const saludoEl = document.getElementById('saludo-invitado');
+            if (saludoEl) {
+                saludoEl.textContent = `¡Hola ${invitado.nombre}, estás invitado a la boda de!`;
+            }
         }
     };
 
@@ -58,26 +71,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // --- 4. MOTOR DEL EFECTO LINTERNA (Soporte Desktop + Mobile) ---
+    // --- 4. MOTOR DEL EFECTO LINTERNA ---
     const manejarLinterna = () => {
         const linterna = document.getElementById('linterna-bg');
         if (!linterna) return;
 
-        // NUEVO: Lógica de "Apagado Inteligente"
         const zonasBloqueo = document.querySelectorAll('.pausar-linterna');
 
         zonasBloqueo.forEach(zona => {
-            // Cuando el mouse entra, ocultamos la linterna
-            zona.addEventListener('mouseenter', () => {
-                linterna.classList.add('linterna-apagada');
-            });
-            // Cuando el mouse sale, la volvemos a encender
-            zona.addEventListener('mouseleave', () => {
-                linterna.classList.remove('linterna-apagada');
-            });
+            zona.addEventListener('mouseenter', () => { linterna.classList.add('linterna-apagada'); });
+            zona.addEventListener('mouseleave', () => { linterna.classList.remove('linterna-apagada'); });
         });
 
-        // Función unificada para actualizar coordenadas
         const actualizarPosicion = (clientX, clientY) => {
             requestAnimationFrame(() => {
                 linterna.style.setProperty('--x', `${clientX}px`);
@@ -85,12 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
 
-        // Escucha para Mouse (Desktop)
-        document.addEventListener('mousemove', (e) => {
-            actualizarPosicion(e.clientX, e.clientY);
-        });
-
-        // Escucha para Toque (Mobile/Tablets)
+        document.addEventListener('mousemove', (e) => actualizarPosicion(e.clientX, e.clientY));
         document.addEventListener('touchmove', (e) => {
             const toque = e.touches[0];
             actualizarPosicion(toque.clientX, toque.clientY);
@@ -111,14 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
             H = canvas.height = canvas.offsetHeight;
         });
 
-        // PALETA BOTÁNICA VINTAGE (Adaptado a tu nueva paleta)
-        const COLORS = [
-            'rgba(102, 105, 86,',   // #666956 (Primary - Oliva Oscuro)
-            'rgba(141, 142, 124,',  // #8d8e7c (Secondary - Oliva Medio)
-            'rgba(176, 137, 129,',  // #b08981 (Tertiary - Rosa apagado/Marrón)
-            'rgba(240, 192, 188,'   // #f0c0bc (Surface Variant - Rosa suave)
-        ];
-        const COUNT = 40; // Número de partículas en pantalla
+        const COLORS = ['rgba(102, 105, 86,', 'rgba(141, 142, 124,', 'rgba(176, 137, 129,', 'rgba(240, 192, 188,'];
+        const COUNT = 40;
 
         const drawLeaf = (ctx, x, y, size, rotation, alpha, colorBase) => {
             ctx.save();
@@ -167,11 +161,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // ==========================================
-    // INICIALIZACIÓN DE TODAS LAS FUNCIONES
+    // INICIALIZACIÓN
     // ==========================================
-    manejarBienvenida();
+    manejarAccesoInvitado();
     manejarCuentaRegresiva();
     manejarFormulario();
     manejarLinterna();
-    manejarParticulasBotanicas(); // <- Inyección del nuevo efecto
+    manejarParticulasBotanicas();
 });

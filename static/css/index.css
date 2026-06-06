@@ -150,3 +150,23 @@ input:focus, select:focus {
     background-position: left top;
     image-rendering: auto;        /* Deja al navegador interpolar suavemente la unión entre tiles */
 }
+
+/* ========================================
+   ANIMACIONES MODAL (AÑADIDO FASE 4)
+======================================== */
+.fade-out {
+    animation: fadeOut 0.4s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.95); }
+}
+
+/* Modificación nativa de la etiqueta dialog */
+dialog::backdrop {
+    transition: opacity 0.4s ease-out;
+}
+dialog.fade-out::backdrop {
+    opacity: 0;
+}
