@@ -107,8 +107,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 // URLSearchParams inyecta automáticamente el Content-Type: application/x-www-form-urlencoded
                 const response = await fetch(GOOGLE_APP_SCRIPT_URL, {
                     method: 'POST',
-                    body: dataProcesada
+                    body: dataProcesada,
+                    redirect: 'follow'
                 });
+
+                const contentType = response.headers.get("content-type");
+                if (contentType && contentType.indexOf("application/json") === -1) {
+                    throw new Error("Apps Script devolvió HTML (Problema de permisos CORS).");
+                }
 
                 if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
 
