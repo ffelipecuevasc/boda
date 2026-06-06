@@ -10,14 +10,37 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 1. PERSONALIZACIÓN DE BIENVENIDA ---
     const manejarBienvenida = () => {
         const urlParams = new URLSearchParams(window.location.search);
-        const vipHash = urlParams.get('vip'); // Extraemos el hash de la URL
+        const vipHash = urlParams.get('vip');
 
-        // Si existe el hash en la URL y además coincide con alguien en nuestro diccionario
         if (vipHash && listaInvitados[vipHash]) {
             const invitado = listaInvitados[vipHash];
 
-            // 1. Invocamos la modal inyectando nombre y rol de forma segura
+            // 1. Invocamos la modal
             inicializarModal(invitado.nombre, invitado.rol);
+
+            // 2. Inyección dinámica del Checkbox
+            const contenedorNombres = document.getElementById('contenedor-nombres-rsvp');
+            if (contenedorNombres) {
+                // Generación de elementos con API DOM pura (Sanitización estricta)
+                const label = document.createElement('label');
+                label.className = 'flex items-center gap-3 cursor-pointer group p-4 border border-surface-variant rounded-xl focus-within:border-primary transition-colors';
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.name = 'invitados_confirmados';
+                checkbox.value = invitado.nombre;
+                checkbox.checked = true; // Requisito de submit
+                checkbox.required = true;
+                checkbox.className = 'w-5 h-5 rounded border-surface-variant text-primary focus:ring-primary transition-all';
+
+                const span = document.createElement('span');
+                span.className = 'text-sm font-bold text-on-surface-variant group-hover:text-primary transition-colors';
+                span.textContent = invitado.nombre;
+
+                label.appendChild(checkbox);
+                label.appendChild(span);
+                contenedorNombres.appendChild(label);
+            }
         }
     };
 
@@ -50,17 +73,71 @@ document.addEventListener('DOMContentLoaded', () => {
     const manejarFormulario = () => {
         const form = document.getElementById('formulario-rsvp');
         const exito = document.getElementById('mensaje-exito');
+        const btnSubmit = form?.querySelector('button[type="submit"]');
 
         if (!form) return;
 
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            form.classList.add('opacity-50', 'pointer-events-none');
-            setTimeout(() => {
-                form.style.display = 'none';
-                exito.classList.remove('hidden');
-                exito.classList.add('fade-in');
-            }, 1000);
+
+            // 1. Estado UI: Loading (Prevención de double-tap)
+            const textoOriginalBtn = btnSubmit.textContent;
+            btnSubmit.disabled = true;
+            btnSubmit.textContent = 'ENVIANDO...';
+            btnSubmit.classList.add('opacity-50', 'pointer-events-none');
+
+            // 2. Serialización de payload
+            const formData = new FormData(form);
+            const dataProcesada = new URLSearchParams();
+
+            dataProcesada.append('invitados_confirmados', formData.get('invitados_confirmados'));
+            dataProcesada.append('asistencia', formData.get('asistencia'));
+            dataProcesada.append('cancion', formData.get('cancion') || '');
+
+            // Agrupación de restricciones alimenticias múltiples a un string
+            const arrRestricciones = formData.getAll('restriccion');
+            const strRestricciones = arrRestricciones.length > 0 ? arrRestricciones.join(', ') : 'ninguna';
+            dataProcesada.append('restriccion', strRestricciones);
+
+            // Endpoint de Google Apps Script generado
+            const GOOGLE_APP_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz9qRBZQh9f1Qtk9Ly6KVKprYEF09b7DmKVkIZlms8PkJQCOztMQ74Vb4SC_LW2jU--dA/exec';
+
+            try {
+                // 3. Petición Asíncrona POST
+                // URLSearchParams inyecta automáticamente el Content-Type: application/x-www-form-urlencoded
+                const response = await fetch(GOOGLE_APP_SCRIPT_URL, {
+                    method: 'POST',
+                    body: dataProcesada
+                });
+
+                if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+
+                const resultado = await response.json();
+
+                if (resultado.status === 'success') {
+                    // 4. Estado UI: Success
+                    form.classList.add('fade-out', 'pointer-events-none');
+
+                    // Sincronización con la animación CSS nativa
+                    setTimeout(() => {
+                        form.style.display = 'none';
+                        exito.classList.remove('hidden');
+                        exito.classList.add('fade-in');
+                    }, 400);
+                } else {
+                    throw new Error(resultado.details || 'Fallo interno en Apps Script');
+                }
+
+            } catch (error) {
+                // 5. Estado UI: Error Dropback
+                console.error('Error en RSVP Webhook:', error);
+                alert('No pudimos procesar tu confirmación. Revisa tu conexión e intenta nuevamente.');
+
+                // Rollback del botón
+                btnSubmit.disabled = false;
+                btnSubmit.textContent = textoOriginalBtn;
+                btnSubmit.classList.remove('opacity-50', 'pointer-events-none');
+            }
         });
     };
 
