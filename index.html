@@ -117,7 +117,7 @@
         <section class="relative min-h-screen flex items-center justify-center overflow-hidden" id="principal">
             <div class="absolute inset-0 z-0 bg-background">
                 <img alt="Ann y Asiel en la playa" class="w-full h-full object-cover opacity-40 mix-blend-multiply"
-                     src="./static/img/portada.png"/>
+                     src="./static/img/portada.webp"/>
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent via-surface/60 to-surface"></div>
 
                 <canvas id="hojas-canvas"
@@ -174,218 +174,233 @@
             </div>
         </section>
 
-        <!-- Sección Detalles del Evento -->
-        <section class="py-24 px-6 bg-surface-container-lowest/60" id="evento">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="font-headline text-6xl md:text-7xl lg:text-8xl text-center mb-16 leading-tight pb-4 sunbeam-title shadow-3d-text">
-                    Detalles del Evento
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Contenedor padre de 3 secciones que contiene fondo floral en los extremos -->
+        <div class="relative w-full overflow-hidden bg-surface-container-lowest/60">
 
-                    <!-- La Boda -->
-                    <div class="pausar-linterna bg-surface-container-lowest/40 backdrop-blur-xl border-t border-l border-white/60 shadow-xl rounded-[1.5rem] p-8 md:p-12 relative z-20 overflow-hidden flex flex-col justify-center text-center">
+            <div class="absolute top-0 left-0 w-[95px] sm:w-[115px] md:w-[140px] lg:w-[165px] xl:w-[190px] h-full floral-border z-0 pointer-events-none mix-blend-multiply opacity-90" style="mask-image: linear-gradient(to bottom, black 85%, transparent 100%, black 0%); -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%, black 0%);"></div>
 
-                        <svg class="absolute -bottom-16 -right-16 w-64 h-64 text-tertiary opacity-10 z-0 transform rotate-12 pointer-events-none"
+            <div class="absolute top-0 right-0 w-[95px] sm:w-[115px] md:w-[140px] lg:w-[165px] xl:w-[190px] h-full floral-border z-0 pointer-events-none mix-blend-multiply opacity-90 -scale-x-100" style="mask-image: linear-gradient(to bottom, black 85%, transparent 100%, black 0%); -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%, black 0%);"></div>
+
+            <div class="relative z-10">
+
+                <!-- Sección Detalles del Evento -->
+                <section class="py-24 px-6" id="evento">
+                    <div class="max-w-6xl mx-auto">
+                        <h2 class="font-headline text-6xl md:text-7xl lg:text-8xl text-center mb-16 leading-tight pb-4 sunbeam-title shadow-3d-text">
+                            Detalles del Evento
+                        </h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                            <!-- La Boda -->
+                            <div class="pausar-linterna bg-surface-container-lowest/40 backdrop-blur-xl border-t border-l border-white/60 shadow-xl rounded-[1.5rem] p-8 md:p-12 relative z-20 overflow-hidden flex flex-col justify-center text-center">
+
+                                <svg class="absolute -bottom-16 -right-16 w-64 h-64 text-tertiary opacity-10 z-0 transform rotate-12 pointer-events-none"
+                                     viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2C8 2 4 5 4 9C4 11.2 5.2 13 6.8 14.2C5.5 15.5 3 17 3 17C6 17 8.5 15.5 10 14.5C10.6 14.8 11.3 15 12 15C16 15 20 12 20 8C20 4 16 2 12 2ZM12 13C8.5 13 6 10.5 6 9C6 6.5 8.5 4 12 4C15.5 4 18 6.5 18 8C18 10.5 15.5 13 12 13Z"/>
+                                    <path d="M14 20C14 20 12 22 12 22C12 22 10 20 10 18C10 16 12 15 12 15C12 15 14 16 14 18C14 20 14 20 14 20Z"/>
+                                </svg>
+
+                                <div class="relative z-10">
+                                    <h3 class="font-headline text-4xl mb-10 text-primary">La Boda</h3>
+
+                                    <div class="space-y-8 font-body">
+                                        <div class="flex flex-col items-center">
+                                            <p class="flex items-center gap-2 font-bold text-sm text-on-surface">
+                                                <span class="material-symbols-outlined text-primary">schedule</span>
+                                                11 SEP 2026 | 16:30 HRS
+                                            </p>
+                                            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Ann+y+Asiel&dates=20260911T163000/20260911T183000&ctz=America/Santiago&details=¡Te+esperamos+en+nuestra+ceremonia!&location=Vicente+Reyes+349,+Villarrica,+Araucanía,+Chile"
+                                               target="_blank" rel="noopener noreferrer"
+                                               class="mt-3 inline-block border border-primary text-primary px-6 py-2 rounded-md text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all">
+                                                Agregar a la Agenda
+                                            </a>
+                                        </div>
+
+                                        <div class="flex flex-col items-center">
+                                            <p class="flex items-center gap-2 text-sm text-on-surface">
+                                                <span class="material-symbols-outlined text-primary">location_on</span>
+                                                Salón del Reino de los Testigos de Jehová, Villarrica
+                                            </p>
+                                            <a href="https://maps.app.goo.gl/khoe52TjrNbXPXbJ6" target="_blank"
+                                               rel="noopener noreferrer"
+                                               class="mt-3 inline-block bg-primary text-surface px-8 py-2 rounded-md hover:bg-secondary transition-colors text-[10px] font-bold uppercase tracking-widest">
+                                                ¿Cómo llegar?
+                                            </a>
+                                        </div>
+
+                                        <div class="flex flex-col items-center">
+                                            <p class="flex items-center gap-2 font-bold text-sm text-on-surface">
+                                                <span class="material-symbols-outlined text-primary">checkroom</span>
+                                                Código de Vestimenta
+                                            </p>
+                                            <p class="mt-1 text-xs text-on-surface-variant opacity-80">Formal</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- La Fiesta -->
+                            <div class="pausar-linterna bg-surface-container-lowest/40 backdrop-blur-xl border-t border-l border-white/60 shadow-xl rounded-[1.5rem] p-8 md:p-12 relative z-20 overflow-hidden flex flex-col justify-center text-center">
+
+                                <svg class="absolute -top-12 -left-12 w-72 h-72 text-tertiary opacity-[0.08] z-0 transform -rotate-45 pointer-events-none"
+                                     viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2C8 2 4 5 4 9C4 11.2 5.2 13 6.8 14.2C5.5 15.5 3 17 3 17C6 17 8.5 15.5 10 14.5C10.6 14.8 11.3 15 12 15C16 15 20 12 20 8C20 4 16 2 12 2ZM12 13C8.5 13 6 10.5 6 9C6 6.5 8.5 4 12 4C15.5 4 18 6.5 18 8C18 10.5 15.5 13 12 13Z"/>
+                                    <path d="M14 20C14 20 12 22 12 22C12 22 10 20 10 18C10 16 12 15 12 15C12 15 14 16 14 18C14 20 14 20 14 20Z"/>
+                                </svg>
+
+                                <div class="relative z-10">
+                                    <h3 class="font-headline text-4xl mb-10 text-primary">La Fiesta</h3>
+
+                                    <div class="space-y-8 font-body">
+                                        <div class="flex flex-col items-center">
+                                            <p class="flex items-center gap-2 font-bold text-sm text-on-surface">
+                                                <span class="material-symbols-outlined text-primary">schedule</span>
+                                                11 SEP 2026 | 20:00 HRS
+                                            </p>
+                                            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Fiesta+Boda+Ann+y+Asiel&dates=20260911T200000/20260912T050000&ctz=America/Santiago&details=¡A+celebrar+juntos!+Cena,+bar+abierto+y+tótem+de+fotos.&location=Rodeo+Villarrica,+Araucanía,+Chile"
+                                               target="_blank" rel="noopener noreferrer"
+                                               class="mt-3 inline-block border border-primary text-primary px-6 py-2 rounded-md text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all">
+                                                Agregar a la Agenda
+                                            </a>
+                                        </div>
+
+                                        <div class="flex flex-col items-center">
+                                            <p class="flex items-center gap-2 text-sm text-on-surface">
+                                                <span class="material-symbols-outlined text-primary">location_on</span>
+                                                Rodeo, Villarrica
+                                            </p>
+                                            <a href="https://maps.app.goo.gl/t5JVYGVAWi6tvjMz6"
+                                               target="_blank" rel="noopener noreferrer"
+                                               class="mt-3 inline-block bg-primary text-surface px-8 py-2 rounded-md hover:bg-secondary transition-colors text-[10px] font-bold uppercase tracking-widest">
+                                                ¿Cómo llegar?
+                                            </a>
+                                        </div>
+
+                                        <div class="flex flex-col items-center">
+                                            <p class="flex items-center gap-2 font-bold text-sm text-on-surface">
+                                                <span class="material-symbols-outlined text-primary">celebration</span>
+                                                Detalles
+                                            </p>
+                                            <p class="mt-1 text-xs text-on-surface-variant opacity-80">Cena + Bar
+                                                abierto +
+                                                Tótem de Fotos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección de Galería de Imágenes -->
+                <section class="py-24 px-6" id="galeria">
+                    <div class="max-w-5xl mx-auto text-center">
+                        <h2 class="font-headline text-6xl md:text-7xl lg:text-8xl text-center mb-12 leading-tight pb-4 sunbeam-title shadow-3d-text">
+                            Galería de Fotografías
+                        </h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div class="aspect-square overflow-hidden rounded-2xl shadow-lg relative z-20">
+                                <img src="./static/img/asielyann_1.webp" alt="Manos entrelazadas Ann y Asiel"
+                                     class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="aspect-square overflow-hidden rounded-2xl shadow-lg relative z-20">
+                                <img src="./static/img/asielyann_2.webp" alt="Ann y Asiel abrazados"
+                                     class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="aspect-square overflow-hidden rounded-2xl shadow-lg relative z-20">
+                                <img src="./static/img/asielyann_3.webp" alt="Ann y Asiel en la orilla del lago"
+                                     class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="aspect-square overflow-hidden rounded-2xl shadow-lg relative z-20">
+                                <img src="./static/img/asielyann_4.webp" alt="Asiel levantando a Ann"
+                                     class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección de detalles sobre Regalos -->
+                <section class="py-24 px-6" id="regalos">
+                    <div class="pausar-linterna max-w-2xl mx-auto text-center bg-surface-container-lowest/40 backdrop-blur-xl border-t border-l border-white/60 shadow-xl rounded-[1.5rem] p-12 relative z-20 overflow-hidden">
+
+                        <svg class="absolute -bottom-20 -left-10 w-80 h-80 text-tertiary opacity-10 z-0 transform rotate-45 pointer-events-none"
+                             viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C8 2 4 5 4 9C4 11.2 5.2 13 6.8 14.2C5.5 15.5 3 17 3 17C6 17 8.5 15.5 10 14.5C10.6 14.8 11.3 15 12 15C16 15 20 12 20 8C20 4 16 2 12 2ZM12 13C8.5 13 6 10.5 6 9C6 6.5 8.5 4 12 4C15.5 4 18 6.5 18 8C18 10.5 15.5 13 12 13Z"/>
+                            <path d="M14 20C14 20 12 22 12 22C12 22 10 20 10 18C10 16 12 15 12 15C12 15 14 16 14 18C14 20 14 20 14 20Z"/>
+                        </svg>
+
+                        <svg class="absolute -top-16 -right-16 w-64 h-64 text-tertiary opacity-[0.06] z-0 transform -rotate-135 pointer-events-none"
                              viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 2C8 2 4 5 4 9C4 11.2 5.2 13 6.8 14.2C5.5 15.5 3 17 3 17C6 17 8.5 15.5 10 14.5C10.6 14.8 11.3 15 12 15C16 15 20 12 20 8C20 4 16 2 12 2ZM12 13C8.5 13 6 10.5 6 9C6 6.5 8.5 4 12 4C15.5 4 18 6.5 18 8C18 10.5 15.5 13 12 13Z"/>
                             <path d="M14 20C14 20 12 22 12 22C12 22 10 20 10 18C10 16 12 15 12 15C12 15 14 16 14 18C14 20 14 20 14 20Z"/>
                         </svg>
 
                         <div class="relative z-10">
-                            <h3 class="font-headline text-4xl mb-10 text-primary">La Boda</h3>
+                            <span class="material-symbols-outlined text-5xl mb-4 text-tertiary">featured_seasonal_and_gifts</span>
+                            <h2 class="font-headline text-6xl md:text-7xl lg:text-8xl text-center mb-6 leading-tight pb-4 sunbeam-title shadow-3d-text">
+                                Regalos
+                            </h2>
 
-                            <div class="space-y-8 font-body">
-                                <div class="flex flex-col items-center">
-                                    <p class="flex items-center gap-2 font-bold text-sm text-on-surface">
-                                        <span class="material-symbols-outlined text-primary">schedule</span>
-                                        11 SEP 2026 | 16:30 HRS
-                                    </p>
-                                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Ann+y+Asiel&dates=20260911T163000/20260911T183000&ctz=America/Santiago&details=¡Te+esperamos+en+nuestra+ceremonia!&location=Vicente+Reyes+349,+Villarrica,+Araucanía,+Chile"
-                                       target="_blank" rel="noopener noreferrer"
-                                       class="mt-3 inline-block border border-primary text-primary px-6 py-2 rounded-md text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all">
-                                        Agregar a la Agenda
-                                    </a>
+                            <p class="text-sm mb-10 italic font-body text-on-surface-variant">
+                                <strong class="text-on-surface">Su presencia es el regalo más importante para
+                                    nosotros.</strong>
+                                Si desean hacernos un obsequio, agradeceremos una contribución para comenzar esta nueva
+                                etapa
+                                juntos.
+                            </p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 border-t border-surface-variant pt-8 font-body w-full max-w-3xl mx-auto">
+                                <!-- Datos Asiel -->
+                                <div>
+                                    <h3 class="font-bold text-primary text-xs mb-5 uppercase tracking-[0.2em] text-center opacity-80">
+                                        Cuenta Novio</h3>
+                                    <div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-sm text-left">
+                                        <p class="font-bold text-on-surface text-right">Nombre:</p>
+                                        <p class="text-on-surface-variant break-words">Asiel Catalán Calabrano</p>
+
+                                        <p class="font-bold text-on-surface text-right">RUT:</p>
+                                        <p class="text-on-surface-variant">20.990.565-5</p>
+
+                                        <p class="font-bold text-on-surface text-right">Banco:</p>
+                                        <p class="text-on-surface-variant">Banco Estado</p>
+
+                                        <p class="font-bold text-on-surface text-right">Cuenta:</p>
+                                        <p class="text-on-surface-variant">CuentaRUT</p>
+
+                                        <p class="font-bold text-on-surface text-right">Número:</p>
+                                        <p class="text-on-surface-variant">20990565</p>
+                                    </div>
                                 </div>
 
-                                <div class="flex flex-col items-center">
-                                    <p class="flex items-center gap-2 text-sm text-on-surface">
-                                        <span class="material-symbols-outlined text-primary">location_on</span>
-                                        Salón del Reino de los Testigos de Jehová, Villarrica
-                                    </p>
-                                    <a href="https://maps.app.goo.gl/khoe52TjrNbXPXbJ6" target="_blank"
-                                       rel="noopener noreferrer"
-                                       class="mt-3 inline-block bg-primary text-surface px-8 py-2 rounded-md hover:bg-secondary transition-colors text-[10px] font-bold uppercase tracking-widest">
-                                        ¿Cómo llegar?
-                                    </a>
-                                </div>
+                                <!-- Datos Ann -->
+                                <div>
+                                    <h3 class="font-bold text-tertiary text-xs mb-5 uppercase tracking-[0.2em] text-center opacity-80">
+                                        Cuenta Novia</h3>
+                                    <div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-sm text-left">
+                                        <p class="font-bold text-on-surface text-right">Nombre:</p>
+                                        <p class="text-on-surface-variant break-words">Ann Tello Fernández</p>
 
-                                <div class="flex flex-col items-center">
-                                    <p class="flex items-center gap-2 font-bold text-sm text-on-surface">
-                                        <span class="material-symbols-outlined text-primary">checkroom</span>
-                                        Código de Vestimenta
-                                    </p>
-                                    <p class="mt-1 text-xs text-on-surface-variant opacity-80">Formal</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                        <p class="font-bold text-on-surface text-right">RUT:</p>
+                                        <p class="text-on-surface-variant">19.787.926-2</p>
 
-                    <!-- La Fiesta -->
-                    <div class="pausar-linterna bg-surface-container-lowest/40 backdrop-blur-xl border-t border-l border-white/60 shadow-xl rounded-[1.5rem] p-8 md:p-12 relative z-20 overflow-hidden flex flex-col justify-center text-center">
+                                        <p class="font-bold text-on-surface text-right">Banco:</p>
+                                        <p class="text-on-surface-variant">Banco Estado</p>
 
-                        <svg class="absolute -top-12 -left-12 w-72 h-72 text-tertiary opacity-[0.08] z-0 transform -rotate-45 pointer-events-none"
-                             viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C8 2 4 5 4 9C4 11.2 5.2 13 6.8 14.2C5.5 15.5 3 17 3 17C6 17 8.5 15.5 10 14.5C10.6 14.8 11.3 15 12 15C16 15 20 12 20 8C20 4 16 2 12 2ZM12 13C8.5 13 6 10.5 6 9C6 6.5 8.5 4 12 4C15.5 4 18 6.5 18 8C18 10.5 15.5 13 12 13Z"/>
-                            <path d="M14 20C14 20 12 22 12 22C12 22 10 20 10 18C10 16 12 15 12 15C12 15 14 16 14 18C14 20 14 20 14 20Z"/>
-                        </svg>
+                                        <p class="font-bold text-on-surface text-right">Cuenta:</p>
+                                        <p class="text-on-surface-variant">CuentaRUT</p>
 
-                        <div class="relative z-10">
-                            <h3 class="font-headline text-4xl mb-10 text-primary">La Fiesta</h3>
-
-                            <div class="space-y-8 font-body">
-                                <div class="flex flex-col items-center">
-                                    <p class="flex items-center gap-2 font-bold text-sm text-on-surface">
-                                        <span class="material-symbols-outlined text-primary">schedule</span>
-                                        11 SEP 2026 | 20:00 HRS
-                                    </p>
-                                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Fiesta+Boda+Ann+y+Asiel&dates=20260911T200000/20260912T050000&ctz=America/Santiago&details=¡A+celebrar+juntos!+Cena,+bar+abierto+y+tótem+de+fotos.&location=Rodeo+Villarrica,+Araucanía,+Chile"
-                                       target="_blank" rel="noopener noreferrer"
-                                       class="mt-3 inline-block border border-primary text-primary px-6 py-2 rounded-md text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all">
-                                        Agregar a la Agenda
-                                    </a>
-                                </div>
-
-                                <div class="flex flex-col items-center">
-                                    <p class="flex items-center gap-2 text-sm text-on-surface">
-                                        <span class="material-symbols-outlined text-primary">location_on</span>
-                                        Rodeo, Villarrica
-                                    </p>
-                                    <a href="https://maps.app.goo.gl/t5JVYGVAWi6tvjMz6"
-                                       target="_blank" rel="noopener noreferrer"
-                                       class="mt-3 inline-block bg-primary text-surface px-8 py-2 rounded-md hover:bg-secondary transition-colors text-[10px] font-bold uppercase tracking-widest">
-                                        ¿Cómo llegar?
-                                    </a>
-                                </div>
-
-                                <div class="flex flex-col items-center">
-                                    <p class="flex items-center gap-2 font-bold text-sm text-on-surface">
-                                        <span class="material-symbols-outlined text-primary">celebration</span>
-                                        Detalles
-                                    </p>
-                                    <p class="mt-1 text-xs text-on-surface-variant opacity-80">Cena + Bar abierto +
-                                        Tótem de Fotos</p>
+                                        <p class="font-bold text-on-surface text-right">Número:</p>
+                                        <p class="text-on-surface-variant">19787926</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </section>
 
-                </div>
             </div>
-        </section>
-
-        <!-- Sección de Galería de Imágenes -->
-        <section class="py-24 px-6 bg-surface-container-lowest/60" id="galeria">
-            <div class="max-w-5xl mx-auto text-center">
-                <h2 class="font-headline text-6xl md:text-7xl lg:text-8xl text-center mb-12 leading-tight pb-4 sunbeam-title shadow-3d-text">
-                    Galería de Fotografías
-                </h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="aspect-square overflow-hidden rounded-2xl shadow-lg relative z-20">
-                        <img src="./static/img/asielyann_1.jpeg" alt="Manos entrelazadas Ann y Asiel"
-                             class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="aspect-square overflow-hidden rounded-2xl shadow-lg relative z-20">
-                        <img src="./static/img/asielyann_2.jpeg" alt="Ann y Asiel abrazados"
-                             class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="aspect-square overflow-hidden rounded-2xl shadow-lg relative z-20">
-                        <img src="./static/img/asielyann_3.jpeg" alt="Ann y Asiel en la orilla del lago"
-                             class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="aspect-square overflow-hidden rounded-2xl shadow-lg relative z-20">
-                        <img src="./static/img/asielyann_4.jpeg" alt="Asiel levantando a Ann"
-                             class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección de detalles sobre Regalos -->
-        <section class="py-24 px-6 bg-surface-container-lowest/60" id="regalos">
-            <div class="pausar-linterna max-w-2xl mx-auto text-center bg-surface-container-lowest/40 backdrop-blur-xl border-t border-l border-white/60 shadow-xl rounded-[1.5rem] p-12 relative z-20 overflow-hidden">
-
-                <svg class="absolute -bottom-20 -left-10 w-80 h-80 text-tertiary opacity-10 z-0 transform rotate-45 pointer-events-none"
-                     viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C8 2 4 5 4 9C4 11.2 5.2 13 6.8 14.2C5.5 15.5 3 17 3 17C6 17 8.5 15.5 10 14.5C10.6 14.8 11.3 15 12 15C16 15 20 12 20 8C20 4 16 2 12 2ZM12 13C8.5 13 6 10.5 6 9C6 6.5 8.5 4 12 4C15.5 4 18 6.5 18 8C18 10.5 15.5 13 12 13Z"/>
-                    <path d="M14 20C14 20 12 22 12 22C12 22 10 20 10 18C10 16 12 15 12 15C12 15 14 16 14 18C14 20 14 20 14 20Z"/>
-                </svg>
-
-                <svg class="absolute -top-16 -right-16 w-64 h-64 text-tertiary opacity-[0.06] z-0 transform -rotate-135 pointer-events-none"
-                     viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C8 2 4 5 4 9C4 11.2 5.2 13 6.8 14.2C5.5 15.5 3 17 3 17C6 17 8.5 15.5 10 14.5C10.6 14.8 11.3 15 12 15C16 15 20 12 20 8C20 4 16 2 12 2ZM12 13C8.5 13 6 10.5 6 9C6 6.5 8.5 4 12 4C15.5 4 18 6.5 18 8C18 10.5 15.5 13 12 13Z"/>
-                    <path d="M14 20C14 20 12 22 12 22C12 22 10 20 10 18C10 16 12 15 12 15C12 15 14 16 14 18C14 20 14 20 14 20Z"/>
-                </svg>
-
-                <div class="relative z-10">
-                    <span class="material-symbols-outlined text-5xl mb-4 text-tertiary">featured_seasonal_and_gifts</span>
-                    <h2 class="font-headline text-6xl md:text-7xl lg:text-8xl text-center mb-6 leading-tight pb-4 sunbeam-title shadow-3d-text">
-                        Regalos
-                    </h2>
-
-                    <p class="text-sm mb-10 italic font-body text-on-surface-variant">
-                        <strong class="text-on-surface">Su presencia es el regalo más importante para nosotros.</strong>
-                        Si desean hacernos un obsequio, agradeceremos una contribución para comenzar esta nueva etapa
-                        juntos.
-                    </p>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 border-t border-surface-variant pt-8 font-body w-full max-w-3xl mx-auto">
-                        <!-- Datos Asiel -->
-                        <div>
-                            <h3 class="font-bold text-primary text-xs mb-5 uppercase tracking-[0.2em] text-center opacity-80">
-                                Cuenta Novio</h3>
-                            <div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-sm text-left">
-                                <p class="font-bold text-on-surface text-right">Nombre:</p>
-                                <p class="text-on-surface-variant break-words">Asiel Catalán Calabrano</p>
-
-                                <p class="font-bold text-on-surface text-right">RUT:</p>
-                                <p class="text-on-surface-variant">20.990.565-5</p>
-
-                                <p class="font-bold text-on-surface text-right">Banco:</p>
-                                <p class="text-on-surface-variant">Banco Estado</p>
-
-                                <p class="font-bold text-on-surface text-right">Cuenta:</p>
-                                <p class="text-on-surface-variant">CuentaRUT</p>
-
-                                <p class="font-bold text-on-surface text-right">Número:</p>
-                                <p class="text-on-surface-variant">20990565</p>
-                            </div>
-                        </div>
-
-                        <!-- Datos Ann -->
-                        <div>
-                            <h3 class="font-bold text-tertiary text-xs mb-5 uppercase tracking-[0.2em] text-center opacity-80">
-                                Cuenta Novia</h3>
-                            <div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-sm text-left">
-                                <p class="font-bold text-on-surface text-right">Nombre:</p>
-                                <p class="text-on-surface-variant break-words">Ann Tello Fernández</p>
-
-                                <p class="font-bold text-on-surface text-right">RUT:</p>
-                                <p class="text-on-surface-variant">19.787.926-2</p>
-
-                                <p class="font-bold text-on-surface text-right">Banco:</p>
-                                <p class="text-on-surface-variant">Banco Estado</p>
-
-                                <p class="font-bold text-on-surface text-right">Cuenta:</p>
-                                <p class="text-on-surface-variant">CuentaRUT</p>
-
-                                <p class="font-bold text-on-surface text-right">Número:</p>
-                                <p class="text-on-surface-variant">19787926</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
 
         <!-- Sección de Confirmación -->
         <section class="py-24 px-6 bg-primary relative z-20 overflow-hidden" id="confirmar">
@@ -677,7 +692,8 @@
                          class="hidden mt-6 p-6 bg-green-50 text-green-800 rounded-2xl text-center font-bold">
                         ¡Gracias! Tu confirmación ha sido registrada.
                     </div>
-                </div> </div>
+                </div>
+            </div>
         </section>
     </main>
 

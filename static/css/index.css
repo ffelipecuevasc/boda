@@ -60,7 +60,7 @@ input:focus, select:focus {
 ======================================== */
 .patron-confirmacion {
     background-image:
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='104' viewBox='0 0 120 104'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.22)' stroke-width='1.2'%3E%3Cpath d='M30 2l28 16v32L30 66 2 50V18z'/%3E%3Cpath d='M90 2l28 16v32L90 66 62 50V18z'/%3E%3Cpath d='M60 54l28 16v32L60 118 32 102V70z'/%3E%3C/g%3E%3C/svg%3E");
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='104' viewBox='0 0 120 104'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.55)' stroke-width='1.8'%3E%3Cpath d='M30 2l28 16v32L30 66 2 50V18z'/%3E%3Cpath d='M90 2l28 16v32L90 66 62 50V18z'/%3E%3Cpath d='M60 54l28 16v32L60 118 32 102V70z'/%3E%3C/g%3E%3C/svg%3E");
 
     background-size: 120px;
     background-repeat: repeat;
@@ -138,4 +138,15 @@ input:focus, select:focus {
     inset: 0;
     z-index: 1; /* Detrás del texto (z-10) pero sobre el fondo */
     pointer-events: none; /* Crucial para no bloquear clics */
+}
+
+/* ========================================
+   ARTE FLORAL LATERAL
+======================================== */
+.floral-border {
+    background-image: url('../img/ArteFloral.webp');
+    background-size: 100% auto;   /* Mantiene el ancho del div; la altura se calcula proporcionalmente */
+    background-repeat: repeat-y;  /* Repite solo verticalmente, nunca horizontalmente */
+    background-position: left top;
+    image-rendering: auto;        /* Deja al navegador interpolar suavemente la unión entre tiles */
 }
