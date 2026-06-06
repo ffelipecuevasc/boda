@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const manejarBienvenida = () => {
         const urlParams = new URLSearchParams(window.location.search);
         const vipHash = urlParams.get('vip'); // Extraemos el hash de la URL
-        const saludoEl = document.getElementById('saludo-invitado');
 
         // Si existe el hash en la URL y además coincide con alguien en nuestro diccionario
         if (vipHash && listaInvitados[vipHash]) {
@@ -19,11 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 1. Invocamos la modal inyectando nombre y rol de forma segura
             inicializarModal(invitado.nombre, invitado.rol);
-
-            // 2. Actualizamos el texto de fondo
-            if (saludoEl) {
-                saludoEl.textContent = `¡Bienvenidos, ${invitado.nombre}! Estás cordialmente invitado a la boda de`;
-            }
         }
     };
 
