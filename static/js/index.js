@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const vipHash = urlParams.get('vip');
 
+        // NUEVO: Capturamos los nodos del formulario y la advertencia de seguridad
+        const form = document.getElementById('formulario-rsvp');
+        const fallback = document.getElementById('rsvp-fallback');
+
         if (vipHash && listaInvitados[vipHash]) {
             const invitado = listaInvitados[vipHash];
 
@@ -41,6 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 label.appendChild(span);
                 contenedorNombres.appendChild(label);
             }
+        } else {
+            // NUEVO: ESTADO NO AUTENTICADO (Ocultamos el form y mostramos la advertencia)
+            if (form) form.style.display = 'none';
+            if (fallback) fallback.classList.remove('hidden');
         }
     };
 
