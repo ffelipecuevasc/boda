@@ -220,7 +220,7 @@
                                         <div class="flex flex-col items-center">
                                             <p class="flex items-center gap-2 text-sm text-on-surface">
                                                 <span class="material-symbols-outlined text-primary">location_on</span>
-                                                Salón del Reino de los Testigos de Jehová, Villarrica
+                                                Salón del Reino, Villarrica
                                             </p>
                                             <a href="https://maps.app.goo.gl/khoe52TjrNbXPXbJ6" target="_blank"
                                                rel="noopener noreferrer"
@@ -231,10 +231,10 @@
 
                                         <div class="flex flex-col items-center">
                                             <p class="flex items-center gap-2 font-bold text-sm text-on-surface">
-                                                <span class="material-symbols-outlined text-primary">checkroom</span>
-                                                Código de Vestimenta
+                                                <span class="material-symbols-outlined text-primary">favorite_border</span>
+                                                Detalles
                                             </p>
-                                            <p class="mt-1 text-xs text-on-surface-variant opacity-80">Formal</p>
+                                            <p class="mt-1 text-xs text-on-surface-variant opacity-80">Ceremonia con Discurso Bíblico y Votos Matrimoniales</p>
                                         </div>
                                     </div>
                                 </div>
@@ -290,6 +290,55 @@
                                 </div>
                             </div>
 
+                            <!-- Código de Vestimenta -->
+                            <div class="pausar-linterna bg-surface-container-lowest/40 backdrop-blur-xl border-t border-l border-white/60 shadow-xl rounded-[1.5rem] p-8 md:p-12 relative z-20 overflow-hidden col-span-1 md:col-span-2 justify-self-center w-full max-w-2xl flex flex-col items-center justify-center text-center mt-2">
+
+                                <!-- Arte botánico de fondo -->
+                                <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 text-tertiary opacity-[0.03] z-0 pointer-events-none"
+                                     viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2C8 2 4 5 4 9C4 11.2 5.2 13 6.8 14.2C5.5 15.5 3 17 3 17C6 17 8.5 15.5 10 14.5C10.6 14.8 11.3 15 12 15C16 15 20 12 20 8C20 4 16 2 12 2ZM12 13C8.5 13 6 10.5 6 9C6 6.5 8.5 4 12 4C15.5 4 18 6.5 18 8C18 10.5 15.5 13 12 13Z"/>
+                                    <path d="M14 20C14 20 12 22 12 22C12 22 10 20 10 18C10 16 12 15 12 15C12 15 14 16 14 18C14 20 14 20 14 20Z"/>
+                                </svg>
+
+                                <div class="relative z-10 w-full flex flex-col items-center">
+                                    <!-- H3 Solitario (Igual a las tarjetas de 'La Boda' y 'La Fiesta') -->
+                                    <h3 class="font-headline text-4xl mb-10 text-primary">Código de Vestimenta</h3>
+
+                                    <!-- Bloque de Detalles -->
+                                    <div class="flex flex-col items-center mb-8">
+                                        <p class="flex items-center gap-2 font-bold text-sm text-on-surface mb-3">
+                                            <span class="material-symbols-outlined text-primary">checkroom</span>
+                                            Detalles
+                                        </p>
+                                        <p class="text-xs md:text-sm text-on-surface-variant text-center max-w-md leading-relaxed">
+                                            Queremos llenar este día de colores suaves. Por favor, acompáñanos vistiendo <span class="font-bold text-primary">tonos pastel</span>.
+                                        </p>
+                                    </div>
+
+                                    <!-- Contenedor interno optimizado -->
+                                    <div class="bg-surface-variant/20 border border-primary/10 rounded-xl p-6 w-full max-w-md mx-auto shadow-inner">
+                                        <p class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-primary mb-5 text-center opacity-80 leading-relaxed">
+                                            Detalles Exclusivos para<br>Damas de Honor y Amigos del Novio
+                                        </p>
+                                        <div class="flex flex-col gap-4 text-xs text-left">
+                                            <!-- Regla Damas -->
+                                            <div class="flex items-center gap-4">
+                                                <div class="w-4 h-4 rounded-full bg-tertiary shadow-sm shrink-0"></div>
+                                                <span class="text-on-surface-variant">
+                                                    <strong class="text-tertiary">Palo rosa:</strong> Damas de honor
+                                                </span>
+                                            </div>
+                                            <!-- Regla Amigos -->
+                                            <div class="flex items-center gap-4">
+                                                <div class="w-4 h-4 rounded-full bg-primary shadow-sm shrink-0"></div>
+                                                <span class="text-on-surface-variant">
+                                                    <strong class="text-primary">Verde:</strong> Corbatas amigos del novio
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -688,9 +737,18 @@
                         </button>
                     </form>
 
-                    <div id="mensaje-exito"
-                         class="hidden mt-6 p-6 bg-green-50 text-green-800 rounded-2xl text-center font-bold">
-                        ¡Gracias! Tu confirmación ha sido registrada.
+                    <div id="mensaje-exito" class="hidden mt-6">
+                        <div class="p-8 bg-surface-container-lowest/60 border border-primary/20 rounded-[1.5rem] text-center backdrop-blur-md shadow-lg">
+                            <span class="material-symbols-outlined text-5xl text-tertiary mb-3">favorite</span>
+                            <h3 class="font-headline text-5xl text-primary mb-2">¡Gracias!</h3>
+                            <p class="font-body text-sm text-on-surface-variant font-medium">
+                                Tu confirmación ha sido registrada con éxito.
+                            </p>
+                            <div class="h-[1px] w-16 bg-gradient-to-r from-transparent via-tertiary/50 to-transparent mx-auto my-4"></div>
+                            <p class="font-body text-[10px] text-primary uppercase tracking-[0.2em] font-bold">
+                                Nos vemos en la boda
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -711,6 +769,7 @@
     </footer>
 </div>
 
+<!-- Modal - Ventana de bienvenida para cada invitado -->
 <dialog
         id="welcome-modal"
         aria-labelledby="modal-nombre"
