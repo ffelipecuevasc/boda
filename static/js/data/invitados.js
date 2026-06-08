@@ -114,5 +114,9 @@ export const listaInvitados = {
     "uyai3o": {
         "nombre": "Daniela y Magdiel Barra",
         "rol": "INVITADO"
+    },
+    "h8v3n1": {
+        "nombre": "Ana María Fernández",
+        "rol": "MADRE DE LA NOVIA"
     }
 };
