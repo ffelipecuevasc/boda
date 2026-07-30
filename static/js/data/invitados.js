@@ -118,5 +118,25 @@ export const listaInvitados = {
     "h8v3n1": {
         "nombre": "Ana María Fernández",
         "rol": "MADRE DE LA NOVIA"
+    },
+    "z8k2m9": {
+        "nombre": "Fabián y Constanza Acuña",
+        "rol": "ANFITRION"
+    },
+    "p4x7r1": {
+        "nombre": "Nicolás Vargas y Florencia Retamales",
+        "rol": "DAMA DE HONOR"
+    },
+    "m9v3c5": {
+        "nombre": "Antonia Mendoza",
+        "rol": "DAMA DE HONOR"
+    },
+    "t2b8j4": {
+        "nombre": "Valentina Pineda",
+        "rol": "DAMA DE HONOR"
+    },
+    "h6n1w7": {
+        "nombre": "José Miguel y Andrea Guerrero",
+        "rol": "INVITADO"
     }
 };
